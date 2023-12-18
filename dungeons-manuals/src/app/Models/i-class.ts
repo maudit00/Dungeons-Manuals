@@ -4,7 +4,7 @@ export interface IClass {
   index: string
   name: string
   hit_die: number
-  proficiency_choices: IRef[]
+  proficiency_choices: ProficiencyChoice[]
   proficiencies: IRef[]
   saving_throws: IRef[]
   starting_equipment: StartingEquipment[]
@@ -55,6 +55,7 @@ export interface Option2 {
   of?: IRef
   choice?: Choice
 }
+
 
 export interface Choice {
   desc: string
