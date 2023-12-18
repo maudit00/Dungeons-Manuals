@@ -1,15 +1,17 @@
+import { IRef } from "./i-ref"
+
 export interface IClass {
   index: string
   name: string
   hit_die: number
   proficiency_choices: ProficiencyChoice[]
-  proficiencies: Proficiency[]
-  saving_throws: SavingThrow[]
+  proficiencies: IRef[]
+  saving_throws: IRef[]
   starting_equipment: StartingEquipment[]
   starting_equipment_options: StartingEquipmentOption[]
   class_levels: string
   multi_classing: MultiClassing
-  subclasses: Subclass[]
+  subclasses: IRef[]
   url: string
 }
 
@@ -27,36 +29,12 @@ export interface From {
 
 export interface Option {
   option_type: string
-  item: Item
-}
-
-export interface Item {
-  index: string
-  name: string
-  url: string
-}
-
-export interface Proficiency {
-  index: string
-  name: string
-  url: string
-}
-
-export interface SavingThrow {
-  index: string
-  name: string
-  url: string
+  item: IRef
 }
 
 export interface StartingEquipment {
-  equipment: Equipment
+  equipment: IRef
   quantity: number
-}
-
-export interface Equipment {
-  index: string
-  name: string
-  url: string
 }
 
 export interface StartingEquipmentOption {
@@ -74,15 +52,10 @@ export interface From2 {
 export interface Option2 {
   option_type: string
   count?: number
-  of?: Of
+  of?: IRef
   choice?: Choice
 }
 
-export interface Of {
-  index: string
-  name: string
-  url: string
-}
 
 export interface Choice {
   desc: string
@@ -93,40 +66,16 @@ export interface Choice {
 
 export interface From3 {
   option_set_type: string
-  equipment_category: EquipmentCategory
-}
-
-export interface EquipmentCategory {
-  index: string
-  name: string
-  url: string
+  equipment_category: IRef
 }
 
 export interface MultiClassing {
   prerequisites: Prerequisite[]
-  proficiencies: Proficiency2[]
+  proficiencies: IRef[]
 }
 
 export interface Prerequisite {
-  ability_score: AbilityScore
+  ability_score: IRef
   minimum_score: number
-}
-
-export interface AbilityScore {
-  index: string
-  name: string
-  url: string
-}
-
-export interface Proficiency2 {
-  index: string
-  name: string
-  url: string
-}
-
-export interface Subclass {
-  index: string
-  name: string
-  url: string
 }
 
