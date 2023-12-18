@@ -10,13 +10,17 @@ import { IRef } from '../../Models/i-ref';
 })
 export class ClassesComponent {
 
-  constructor(private classesSvc: ClassesService){}
-
   classes:IRef[] = []
+  chosen:boolean = false
+
+
+  constructor(private classesSvc: ClassesService){
+    this.getClasses()
+  }
 
   getClasses(){
     this.classesSvc.getClasses().subscribe(classes =>{
-      this.classes = classes;
+      this.classes = classes.results;
     })
   }
 

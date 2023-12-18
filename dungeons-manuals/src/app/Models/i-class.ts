@@ -79,3 +79,7 @@ export interface Prerequisite {
   minimum_score: number
 }
 
+export interface iResClasses {
+  count:number
+  results:IRef[]
+}
