@@ -15,10 +15,13 @@ export class ClassesService {
 
   genericUrl:string = environment.api_url
   classUrl:string = "/api/classes/"
+  classes:IClass[] = [];
 
   getSpecificClass (classe:IRef):Observable<IClass>{
     return this.http.get<IClass>(this.genericUrl+this.classUrl+classe.name)
   }
 
-
+  getClasses():Observable<IRef[]> {
+    return this.http.get<IRef[]>(`${this.genericUrl}/classes`)
+  }
 }
