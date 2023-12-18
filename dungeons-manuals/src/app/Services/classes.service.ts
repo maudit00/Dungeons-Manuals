@@ -10,13 +10,15 @@ import { IRef } from '../Models/i-ref';
 })
 export class ClassesService {
 
-  constructor(private http:HttpClient) { }
+  constructor(private http: HttpClient) {
+    this.getClasses()
+  }
 
-  classes:IClass[] = [];
+  classes: IClass[] = [];
+  classUrl: string = "api/classes";
+  genericUrl: string = environment.api_url
 
-  genericUrl:string = environment.api_url
-
-  getClasses():Observable<IRef[]> {
-    return this.http.get<IRef[]>(`${this.genericUrl}/classes`)
+  getClasses(): Observable<IRef[]> {
+    return this.http.get<IRef[]>(`${this.genericUrl}${this.classUrl}`)
   }
 }
