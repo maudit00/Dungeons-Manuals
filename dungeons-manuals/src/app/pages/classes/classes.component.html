@@ -1,15 +1,15 @@
 <div class="container">
-  <div class="row">
 
-    <div class="row col-12 col-md-6 col-lg-4" *ngFor="let c of classes">
+  <div class="row" *ngIf="!chosen">
+    <div class="row col-12 col-md-6 col-lg-4" *ngFor="let c of classes" >
       <div>
         <img src="" alt="Immagine classe">
       </div>
       <div>
-        <p class="h5">{{c.name}}</p>
+        <p class="h5 class-name">{{c.name}}</p>
+        <button class="btn btn-success" [routerLink]="['/classes',c.index]">Dettagli</button>
       </div>
     </div>
-
   </div>
 </div>
-<app-classes [class]=""></app-classes>
+
