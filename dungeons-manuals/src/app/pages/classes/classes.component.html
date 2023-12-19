@@ -1,6 +1,6 @@
 <div class="container">
 
-  <div class="row justify-content-center" *ngIf="!chosen">
+  <div class="row justify-content-center">
     <div class="col-12 col-md-6 col-lg-4 card text-center p-2 m-2 class-card" *ngFor="let c of classes" [routerLink]="['/classes',c.index]">
       <div>
         <img class="img-fluid rounded img-class" loading="lazy" [src]="['../../../assets/img/'+c.index+'.jpeg']" alt="Immagine classe">
