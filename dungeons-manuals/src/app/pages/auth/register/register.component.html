@@ -1,15 +1,15 @@
 <div class="container">
-  <form [formGroup]="registerForm" class="py-5">
+  <form [formGroup]="registerForm" (ngSubmit)="register()" class="py-5">
     <h1 class="h3 mb-3 fw-normal">Registrazione</h1>
 
 
     <div class="form-floating">
-      <input type="text" class="form-control" id="floatingInput" placeholder="Inserisci il tuo nome" formControlName="name">
-      <label for="floatingInput">Nome</label>
+      <input type="text" class="form-control" id="floatingName" placeholder="Inserisci il tuo nome" formControlName="name">
+      <label for="floatingName">Nome</label>
     </div>
     <div class="form-floating">
-      <input type="text" class="form-control" id="floatingInput" placeholder="Inserisci il tuo cognome" formControlName="surname">
-      <label for="floatingInput">Cognome</label>
+      <input type="text" class="form-control" id="floatingSurname" placeholder="Inserisci il tuo cognome" formControlName="surname">
+      <label for="floatingSurname">Cognome</label>
     </div>
     <div class="form-floating">
       <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com" formControlName="email">
@@ -23,6 +23,6 @@
       <input type="password" class="form-control" id="floatingPassword" placeholder="Conferma Password" formControlName="confirmPassword">
       <label for="floatingPassword">Conferma password</label>
     </div>
-    <button class="btn btn-primary w-100 py-2" type="submit">Sign in</button>
+    <button [disabled]="!registerForm.valid" class="btn btn-primary w-100 py-2" type="submit">Sign in</button>
   </form>
 </div>
