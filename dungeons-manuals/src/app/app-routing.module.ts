@@ -8,7 +8,9 @@ const routes: Routes = [
     redirectTo: 'home'
   },
   { path: 'home', loadChildren: () => import('./pages/home/home.module').then(m => m.HomeModule) },
-  { path: 'classes', loadChildren: () => import('./pages/classes/classes.module').then(m => m.ClassesModule) }];
+  { path: 'classes', loadChildren: () => import('./pages/classes/classes.module').then(m => m.ClassesModule) },
+  { path: 'monsters', loadChildren: () => import('./pages/monster/monster.module').then(m => m.MonsterModule) },
+];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

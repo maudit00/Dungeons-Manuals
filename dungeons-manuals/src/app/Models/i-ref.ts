@@ -4,7 +4,7 @@ export interface IRef {
   url:string;
 }
 
-export interface iRes {
+export interface IRes {
   count:number
   results:IRef[]
 }
