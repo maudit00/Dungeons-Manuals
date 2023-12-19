@@ -1,13 +1,8 @@
-<div class="container">
-  <div class="row text-center">
-    <div class="col-12 col-md-6 col-lg-4 monster-card" *ngFor="let monster of monsterArray">
-      <div>
-        <img class="rounded img-class" [src]="['../../../assets/monsters/'+monster.index+'.png']" load="lazy">
-      </div>
-      <div>
-
-        <p>{{monster.name}}</p>
-      </div>
+<div class="container mt-5">
+  <div class="row text-center gap-2 justify-content-center">
+    <div class="col-12 col-md-6 col-lg-3 monster-card mb-3 pt-4 pb-2 rounded" *ngFor="let monster of monsterArray">
+      <img class="rounded img-monster" [src]="['../../../assets/monsters/'+monster.index+'.png']" load="lazy">
+      <h5 class="mt-2">{{monster.name}}</h5>
     </div>
   </div>
 </div>
