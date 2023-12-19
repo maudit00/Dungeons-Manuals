@@ -5,6 +5,7 @@ import { StatsTableComponent } from './components/stats-table/stats-table.compon
 
 
 
+
 @NgModule({
   declarations: [
     StatsTableComponent
@@ -14,7 +15,7 @@ import { StatsTableComponent } from './components/stats-table/stats-table.compon
   ],
   exports: [
     HttpClientModule,
-    StatsTableComponent
+    StatsTableComponent,
   ]
 })
 export class SharedModule { }
