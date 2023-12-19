@@ -1,3 +1,36 @@
 {
-  "users": []
+  "users": [
+    {
+      "email": "tyxyzujavy@mailinator.com",
+      "password": "$2a$10$UhsfKbQARdSkl0pQP5MBrOO1vo7azyEQBjBNLezInnymJkSmV1nT.",
+      "name": "kocajy@mailinator.com",
+      "surname": "fugosisik@mailinator.com",
+      "confirmPassword": "Pa$$w0rd!",
+      "id": 1
+    },
+    {
+      "email": "jeromys@mailinator.com",
+      "password": "$2a$10$PqSfGV5ZLXuWfiriJDLCt.GebJRNbiEutjPh0.HWt5gPCwQqjYv.2",
+      "name": "Elton Hicks",
+      "surname": "Potts",
+      "confirmPassword": "Pa$$w0rd!",
+      "id": 2
+    },
+    {
+      "email": "xetuzer@mailinator.com",
+      "password": "$2a$10$CAApPfWHI5/dLUpPyLjRj.0qm21n0o1jBPI5Wtv3ly15In9KPYbcq",
+      "name": "Karen Munoz",
+      "surname": "Duke",
+      "confirmPassword": "Pa$$w0rd!",
+      "id": 3
+    },
+    {
+      "email": "rixidigyb@mailinator.com",
+      "password": "$2a$10$POlKAP1IH3TLDYarLjI52.GlzWgzGgUa2J2EgrfmDRUIzZ0T5SO6i",
+      "name": "Yvette Wiley",
+      "surname": "Holder",
+      "confirmPassword": "fdvdvsdcd",
+      "id": 4
+    }
+  ]
 }

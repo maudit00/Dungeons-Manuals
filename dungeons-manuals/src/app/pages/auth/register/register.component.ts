@@ -12,6 +12,8 @@ export class RegisterComponent {
 
   constructor (private authSvc:AuthService, private fb:FormBuilder){}
 
+  match: boolean = false;
+
   registerForm:FormGroup = this.fb.group({
 
     name: this.fb.control(null, [Validators.required, Validators.minLength(2)]),
@@ -22,11 +24,38 @@ export class RegisterComponent {
 
   });
 
-  register():void{
 
-    console.log(this.registerForm.value);
+  registered:boolean = false;
 
+  register(){
 
+    this.authSvc.signUp(this.registerForm.value).subscribe(res => {this.registered = true} );
+
+  }
+
+  isValid(inputName:string){
+
+    return this.registerForm.get(inputName)?.valid && this.registerForm.get(inputName)?.dirty
+
+  }
+
+  isInvalid(inputName:string){
+
+    return !this.registerForm.get(inputName)?.valid && this.registerForm.get(inputName)?.dirty
+
+  }
+
+  comparePassword(){
+
+    if(this.registerForm.controls["password"].value === this.registerForm.controls["confirmPassword"].value && this.registerForm.controls["confirmPassword"].dirty){
+
+      this.match = true
+
+    }else{
+
+      this.match = false
+
+    }
 
   }
 
