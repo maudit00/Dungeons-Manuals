@@ -1,0 +1,48 @@
+<div ngbAccordion #accordion="ngbAccordion">
+	<div ngbAccordionItem="First">
+		<h2 ngbAccordionHeader>
+			<button ngbAccordionButton>First Panel</button>
+		</h2>
+		<div ngbAccordionCollapse>
+			<div ngbAccordionBody>
+				<ng-template>
+					Ecco
+				</ng-template>
+			</div>
+		</div>
+	</div>
+	<div ngbAccordionItem="Second">
+		<h2 ngbAccordionHeader>
+			<button ngbAccordionButton>Second Panel</button>
+		</h2>
+		<div ngbAccordionCollapse>
+			<div ngbAccordionBody>
+				<ng-template>
+					Ecco2
+				</ng-template>
+			</div>
+		</div>
+	</div>
+	<div ngbAccordionItem="Second">
+		<h2 ngbAccordionHeader>
+			<button ngbAccordionButton>Second Panel</button>
+		</h2>
+		<div ngbAccordionCollapse>
+			<div ngbAccordionBody>
+				<ng-template>
+					Ecco2
+				</ng-template>
+			</div>
+		</div>
+	</div>
+</div>
+
+<hr />
+
+<button class="btn btn-sm btn-outline-primary me-2" (click)="accordion.toggle('first')">Toggle first</button>
+
+<button class="btn btn-sm btn-outline-primary me-2" (click)="accordion.toggle('second')">Toggle first</button>
+
+<button class="btn btn-sm btn-outline-primary me-2" (click)="accordion.expandAll()">Toggle first</button>
+
+<button class="btn btn-sm btn-outline-primary me-2" (click)="accordion.collapseAll()">Toggle first</button>
