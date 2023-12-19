@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
 import { StatsTableComponent } from './components/stats-table/stats-table.component';
 import { ClassDetailComponent } from './components/class-detail/class-detail.component';
+import { SubClassesComponent } from './components/class-detail/shared/components/sub-classes/sub-classes.component';
 
 
 
@@ -10,7 +11,8 @@ import { ClassDetailComponent } from './components/class-detail/class-detail.com
 @NgModule({
   declarations: [
     StatsTableComponent,
-    ClassDetailComponent
+    ClassDetailComponent,
+    SubClassesComponent
   ],
   imports: [
     CommonModule
@@ -18,6 +20,7 @@ import { ClassDetailComponent } from './components/class-detail/class-detail.com
   exports: [
     HttpClientModule,
     StatsTableComponent,
+    SubClassesComponent,
   ]
 })
 export class SharedModule { }
