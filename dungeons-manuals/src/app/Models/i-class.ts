@@ -78,3 +78,12 @@ export interface Prerequisite {
   ability_score: IRef
   minimum_score: number
 }
+
+export type Levels = Array<{
+  level: number
+  features: IRef[]
+  class: IRef
+  subclass: IRef
+  url: string
+  index: string
+}>
