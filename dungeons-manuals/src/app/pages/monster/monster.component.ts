@@ -14,6 +14,6 @@ export class MonsterComponent {
   constructor(private MSVC:MonsterService){}
 
   ngOnInit(){
-    this.MSVC.getMonsters().subscribe(data=>this.monsterArray=data.results)
+    this.MSVC.getMonsters().subscribe(data=>this.monsterArray=data.results);
   }
 }
