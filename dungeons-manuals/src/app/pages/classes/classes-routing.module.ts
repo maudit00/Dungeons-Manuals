@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { ClassesComponent } from './classes.component';
-import { ClassDetailsComponent } from './class-details/class-details.component';
+import { DetailsComponent } from '../../shared/components/details/details.component'
 
 const routes: Routes = [
   {
@@ -10,7 +10,7 @@ const routes: Routes = [
   },
   {
     path: ':index',
-    component: ClassDetailsComponent
+    component: DetailsComponent
   }
 ];
 
