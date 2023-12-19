@@ -1,0 +1,21 @@
+tr{
+  display:flex;
+  flex-direction: column;
+  text-align: center;
+  height:70px;
+  width:70px;
+}
+.stat{
+  margin:0px 0;
+}
+.name-stat{
+  font-size: 1.3em;
+  font-weight: bold;
+}
+.mod{
+  border: 1px solid black;
+  border-radius: 50%;
+  width:50%;
+  background-color: white;
+  margin:0 auto;
+}
