@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { IRef, IRes } from '../../Models/i-ref';
+import { MonsterService } from '../../Services/monster.service';
 
 @Component({
   selector: 'app-monster',
@@ -7,4 +9,11 @@ import { Component } from '@angular/core';
 })
 export class MonsterComponent {
 
+  monsterArray:IRef[]=[];
+
+  constructor(private MSVC:MonsterService){}
+
+  ngOnInit(){
+    this.MSVC.getMonsters().subscribe(data=>this.monsterArray=data.results)
+  }
 }

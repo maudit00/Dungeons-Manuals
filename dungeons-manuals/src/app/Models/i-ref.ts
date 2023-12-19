@@ -3,3 +3,8 @@ export interface IRef {
   name:string;
   url:string;
 }
+
+export interface IRes {
+  count:number
+  results:IRef[]
+}
