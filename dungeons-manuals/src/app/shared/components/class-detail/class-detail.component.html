@@ -60,7 +60,7 @@
       </div>
       <div class="col-6">
         <span *ngFor="let p of classDetails.subclasses">
-          <p class="d-inline">{{p.name}}, </p>
+		<a [routerLink]="['/subclasses',p.index]"><p class="d-inline">{{p.name}}, </p></a>
         </span>
       </div>
     </div>
