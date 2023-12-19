@@ -20,8 +20,10 @@
       <label for="floatingPassword">Password</label>
     </div>
     <div class="form-floating">
-      <input type="password" class="form-control" id="floatingPassword" placeholder="Conferma Password" formControlName="confirmPassword">
+      <input (input)="comparePassword()" type="password" class="form-control" id="floatingPassword" placeholder="Conferma Password" formControlName="confirmPassword">
       <label for="floatingPassword">Conferma password</label>
+      <div *ngIf="!match && registerForm.controls['confirmPassword'].dirty">Mancata corrispondenza</div>
+      <div *ngIf="match">Password corrispondente</div>
     </div>
     <button [disabled]="!registerForm.valid" class="btn btn-primary w-100 py-2" type="submit">Sign in</button>
   </form>

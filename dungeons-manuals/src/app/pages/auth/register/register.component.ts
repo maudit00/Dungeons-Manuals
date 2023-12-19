@@ -29,7 +29,7 @@ export class RegisterComponent {
 
   register(){
 
-    this.authSvc.signUp(this.registerForm.value).subscribe(res => this.registered = true );
+    this.authSvc.signUp(this.registerForm.value).subscribe(res => {this.registered = true} );
 
   }
 
@@ -50,12 +50,10 @@ export class RegisterComponent {
     if(this.registerForm.controls["password"].value === this.registerForm.controls["confirmPassword"].value && this.registerForm.controls["confirmPassword"].dirty){
 
       this.match = true
-      alert("Le password combaciano")
 
     }else{
 
       this.match = false
-      alert("Le password non combaciano")
 
     }
 
