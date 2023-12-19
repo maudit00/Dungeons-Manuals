@@ -24,7 +24,7 @@ export class ClassesComponent {
   }
 
   getImgByIndex(index:string){
-    this.classesSvc.getImgByIndex(index)
+    return this.classesSvc.getImgByIndex(index)
   }
 
 }
