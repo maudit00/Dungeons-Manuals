@@ -2,7 +2,6 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { environment } from '../../environments/environment.development';
 import { IClass, iResClasses } from '../Models/i-class';
-import { IRef } from '../Models/i-ref';
 import { Observable } from 'rxjs';
 
 @Injectable({
@@ -35,7 +34,7 @@ export class ClassesService {
   getImgByIndex(index: string): string {
     switch (index) {
       case 'barbarian':
-        return '../../../assets/img/';
+        return '../../../assets/img/barbarian.jpeg';
       case 'bard':
         return '../../../assets/img/';
       case 'cleric':
