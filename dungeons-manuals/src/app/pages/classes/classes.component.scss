@@ -1,7 +1,22 @@
-.class-name {
-cursor: pointer;
+.class-card {
+  cursor: pointer;
+  transition: 0.5s;
+
+  &:hover {
+    transform: scale(1.03);
+    -webkit-box-shadow: 1px 1px 12px 5px var(--primary-purple);
+    box-shadow: 0px 0px 7px 3px var(--primary-purple);
+  }
 }
 
-.card{
-  border: 1px solid black;
+.card {
+  background-color: #f1fcff;
+}
+
+.img-class,.card{
+  border: 2px solid var(--primary-purple);
+}
+
+.h5{
+  color: var(--primary-purple);
 }
