@@ -115,13 +115,9 @@ export class RegisterComponent {
 
 
 
-
-
-
   register(){
-    this.authSvc.signUp(this.registerForm.value).subscribe(res => {
+    this.authSvc.signUp(this.registerForm.value).subscribe(res =>{
       this.registered = true
     });
-
   }
 }
