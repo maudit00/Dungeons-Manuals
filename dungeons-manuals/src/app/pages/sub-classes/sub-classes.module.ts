@@ -1,8 +1,8 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-
 import { SubClassesRoutingModule } from './sub-classes-routing.module';
 import { SubClassesComponent } from './sub-classes.component';
+import { SharedModule } from '../../shared/shared.module';
 
 
 @NgModule({
@@ -11,7 +11,8 @@ import { SubClassesComponent } from './sub-classes.component';
   ],
   imports: [
     CommonModule,
-    SubClassesRoutingModule
+    SubClassesRoutingModule,
+    SharedModule
   ]
 })
 export class SubClassesModule { }

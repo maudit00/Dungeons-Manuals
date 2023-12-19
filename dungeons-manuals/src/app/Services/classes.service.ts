@@ -4,6 +4,7 @@ import { environment } from '../../environments/environment.development';
 import { IClass} from '../Models/i-class';
 import { Observable } from 'rxjs';
 import { IRes } from '../Models/i-ref';
+import { ISubClass} from '../Models/i-sub-class';
 
 @Injectable({
   providedIn: 'root'
@@ -20,8 +21,8 @@ export class ClassesService {
     return this.http.get<IClass>(`${this.classUrl}${index}`)
   }
 
-  getSpecificSubClass(index: string): Observable<IClass> {
-    return this.http.get<IClass>(`${this.subClassUrl}${index}`)
+  getSpecificSubClass(index: string): Observable<ISubClass> {
+    return this.http.get<ISubClass>(`${this.subClassUrl}${index}`)
   }
 
   getClasses(): Observable<IRes> {

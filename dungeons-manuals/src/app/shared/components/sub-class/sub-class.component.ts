@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import {ActivatedRoute } from '@angular/router';
 import {ClassesService } from '../../../Services/classes.service';
+import { ISubClass } from '../../../Models/i-sub-class';
 
 @Component({
   selector: 'app-sub-class',
@@ -8,7 +9,7 @@ import {ClassesService } from '../../../Services/classes.service';
   styleUrl: './sub-class.component.scss'
 })
 export class SubClassComponent {
-	subClassDetails!:any;
+	subClassDetails!:ISubClass;
 
 	constructor (private active:ActivatedRoute, private classesSvc:ClassesService){
 	this.active.params.subscribe(params => {
