@@ -9,13 +9,13 @@ import { IClass } from '../../../Models/i-class';
   styleUrl: './class-details.component.scss'
 })
 export class ClassDetailsComponent {
-classChosen:string = ''
-classDetails!:IClass;
-constructor(private classesSvc:ClassesService, private active:ActivatedRoute){
-this.active.params.subscribe(params => {
-  this.classesSvc.getSpecificClass(params['index']).subscribe(classe => this.classDetails = classe)
-  console.log(this.classDetails, params);
-})
+  classChosen: string = ''
+  classDetails!: IClass;
+  constructor(private classesSvc: ClassesService, private active: ActivatedRoute) {
+    this.active.params.subscribe(params => {
+      this.classesSvc.getSpecificClass(params['index']).subscribe(classe => this.classDetails = classe)
+      console.log(this.classDetails, params);
+    })
 
-}
+  }
 }

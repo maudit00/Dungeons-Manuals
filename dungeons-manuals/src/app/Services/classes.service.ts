@@ -10,25 +10,71 @@ import { Observable } from 'rxjs';
 })
 export class ClassesService {
 
-  constructor(private http: HttpClient) {
-    this.getClasses()
+  constructor(private http: HttpClient) { }
+
+
+  classUrl: string = `${environment.api_url}/api/classes/`
+
+  getSpecificClass(index: string): Observable<IClass> {
+    return this.http.get<IClass>(`${this.classUrl}${index}`)
   }
 
-
-  genericUrl:string = environment.api_url
-  classUrl:string = "/api/classes/"
-  classes:IClass[] = [];
-  classChosen:IRef= {
-    index: '',
-    name: '',
-    url: ''
+  getClasses(): Observable<iResClasses> {
+    return this.http.get<iResClasses>(`${this.classUrl}`)
   }
 
-  getSpecificClass (index:string):Observable<IClass>{
-    return this.http.get<IClass>(`${this.genericUrl}${this.classUrl}${index}`)
-  }
-
-  getClasses():Observable<iResClasses> {
-    return this.http.get<iResClasses>(`${this.genericUrl}${this.classUrl}`)
+  getImgByIndex(index: string): string {
+    switch (index) {
+      case 'barbarian':
+        return '../../../assets/img/';
+      case 'bard':
+        return '../../../assets/img/';
+      case 'cleric':
+        return '../../../assets/img/';
+      case 'druid':
+        return '../../../assets/img/';
+      case 'fighter':
+        return '../../../assets/img/';
+      case 'monk':
+        return '../../../assets/img/';
+      case 'paladin':
+        return '../../../assets/img/';
+      case 'ranger':
+        return '../../../assets/img/';
+      case 'rogue':
+        return '../../../assets/img/';
+      case 'sorcerer':
+        return '../../../assets/img/';
+      case 'warlock':
+        return '../../../assets/img/';
+      case 'wizard':
+        return '../../../assets/img/';
+      case 'berserker':
+        return '../../../assets/img/';
+      case 'champion':
+        return '../../../assets/img/';
+      case 'devotion':
+        return '../../../assets/img/';
+      case 'draconic':
+        return '../../../assets/img/';
+      case 'evocation':
+        return '../../../assets/img/';
+      case 'fiend':
+        return '../../../assets/img/';
+      case 'hunter':
+        return '../../../assets/img/';
+      case 'land':
+        return '../../../assets/img/';
+      case 'life':
+        return '../../../assets/img/';
+      case 'lore':
+        return '../../../assets/img/';
+      case 'open-hand':
+        return '../../../assets/img/';
+      case 'thief':
+        return '../../../assets/img/';
+      default:
+        return 'https://picsum.photos/300/300?random=1';
+    }
   }
 }
