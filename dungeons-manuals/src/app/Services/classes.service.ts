@@ -1,8 +1,9 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { environment } from '../../environments/environment.development';
-import { IClass, iResClasses } from '../Models/i-class';
+import { IClass} from '../Models/i-class';
 import { Observable } from 'rxjs';
+import { iRes } from '../Models/i-ref';
 
 @Injectable({
   providedIn: 'root'
@@ -23,12 +24,12 @@ export class ClassesService {
     return this.http.get<IClass>(`${this.subClassUrl}${index}`)
   }
 
-  getClasses(): Observable<iResClasses> {
-    return this.http.get<iResClasses>(`${this.classUrl}`)
+  getClasses(): Observable<iRes> {
+    return this.http.get<iRes>(`${this.classUrl}`)
   }
 
-  getSubClasses(): Observable<iResClasses> {
-    return this.http.get<iResClasses>(`${this.subClassUrl}`)
+  getSubClasses(): Observable<iRes> {
+    return this.http.get<iRes>(`${this.subClassUrl}`)
   }
 
 

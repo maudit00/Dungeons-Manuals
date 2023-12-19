@@ -78,8 +78,3 @@ export interface Prerequisite {
   ability_score: IRef
   minimum_score: number
 }
-
-export interface iResClasses {
-  count:number
-  results:IRef[]
-}
