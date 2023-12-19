@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import { ClassesService } from '../../Services/classes.service';
-import { IClass } from '../../Models/i-class';
 import { IRef } from '../../Models/i-ref';
 
 @Component({
@@ -22,6 +21,10 @@ export class ClassesComponent {
     this.classesSvc.getClasses().subscribe(classes =>{
       this.classes = classes.results;
     })
+  }
+
+  getImgByIndex(index:string){
+    return this.classesSvc.getImgByIndex(index)
   }
 
 }
