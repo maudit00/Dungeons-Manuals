@@ -1,6 +1,6 @@
 <div class="container">
 
-  <div class="row" *ngIf="!chosen">
+  <div class="row justify-content-center" *ngIf="!chosen">
     <div class="col-12 col-md-6 col-lg-4 card text-center p-2 m-2" *ngFor="let c of classes">
       <div>
         <img class="img-fluid rounded" [src]="getImgByIndex(c.index)" alt="Immagine classe">
