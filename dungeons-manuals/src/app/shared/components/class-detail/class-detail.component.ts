@@ -4,11 +4,11 @@ import { IClass } from '../../../Models/i-class';
 import { ClassesService } from '../../../Services/classes.service';
 
 @Component({
-  selector: 'app-details',
-  templateUrl: './details.component.html',
-  styleUrl: './details.component.scss'
+  selector: 'app-class-detail',
+  templateUrl: './class-detail.component.html',
+  styleUrl: './class-detail.component.scss'
 })
-export class DetailsComponent {
+export class ClassDetailComponent {
   classChosen: string = ''
   classDetails!: IClass;
   constructor(private classesSvc: ClassesService, private active: ActivatedRoute) {
@@ -20,5 +20,4 @@ export class DetailsComponent {
     })
 
   }
-
 }
