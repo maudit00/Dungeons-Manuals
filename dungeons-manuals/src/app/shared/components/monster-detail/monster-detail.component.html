@@ -12,8 +12,16 @@
       <img [src]="['../../../../assets/monsters/'+monsterDetails.index+'.png']" class="monster-icon rounded">
     </div>
 
-    <div>
-      <p>Str {{monsterDetails.strength}}</p>
+    <div class="mx-4">
+      <h4 class="purple">Stats</h4>
+      <ul>
+        <li>Strength <span class="purple">{{monsterDetails.strength}}</span></li>
+        <li>Dexterity <span class="purple">{{monsterDetails.dexterity}}</span></li>
+        <li>Constitution <span class="purple">{{monsterDetails.constitution}}</span></li>
+        <li>Intelligence <span class="purple">{{monsterDetails.intelligence}}</span></li>
+        <li>Wisdom <span class="purple">{{monsterDetails.wisdom}}</span></li>
+        <li>Charisma <span class="purple">{{monsterDetails.charisma}}</span></li>
+      </ul>
     </div>
 
   </div>
