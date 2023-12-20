@@ -1,22 +1,28 @@
-<p class="h1 text-center">{{subClassDetails.name}}</p>
+<p class="h1 text-center mt-5 mb-3">{{subClassDetails.name}}</p>
+<p class="h3 text-center">{{subClassDetails.subclass_flavor | json}}</p>
 <div class="container">
-  <div class="row">
+  <div class="row mt-3">
     <!-- PRENDE L'IM -->
     <img  class="col-6 col-lg-3"[src]="['../../../../assets/img/'+subClassDetails.index+'.jpeg']">
     <div class="col-6 col-lg-9">
       <p>{{subClassDetails.desc}}</p>
-      <div>
-        <p class="fw-bold">Skills Levels Unlock</p>
+    </div>
+  </div>
+  <div class="row mt-5">
+	<div class="col-6">
+		<p class="fw-bold h5 mb-5">Spells Available</p>
+	<div class="col-12" *ngFor="let s of subClassDetails.spells">
+		<p class="text-info">{{s.spell.name}}</p>
+	</div>
+  </div>
+      <div class="col-6">
+        <p class="fw-bold mb-5">Skills Levels Unlock</p>
         <!-- CICLA LEVELS OVVER LE SKILL CHE SBLOCCA NEI VARI LIVELLI LA SOTTOCLASSE -->
         <div *ngFor="let level of levels">
           <!-- CICLA NOME ABILITÀ E IL LIVELLO IN CUI LA SBLOCCA -->
           <p *ngFor="let f of level.features">{{f.name}} Lvl: {{level.level}}</p>
         </div>
         </div>
-    </div>
-  </div>
-  <div class="row">
-
   </div>
 </div>
 

@@ -1,3 +1,5 @@
+import {IRef} from './i-ref';
+
 export type ISubClass = {
   index: string
   class: {
@@ -10,5 +12,16 @@ export type ISubClass = {
   desc: Array<string>
   subclass_levels: string
   url: string
-  spells: Array<any>
+  spells: Array<ISpells>
+}
+
+
+export interface ISpells {
+  prerequisites:{
+	  index:string;
+	  type:string;
+	  name:string;
+	  url:string;
+  }
+  spell:IRef;
 }
