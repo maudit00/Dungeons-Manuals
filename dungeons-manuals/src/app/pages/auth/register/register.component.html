@@ -5,30 +5,30 @@
 
 
       <div class="form-floating">
-        <input type="text" class="form-control" id="floatingName" placeholder="Inserisci il tuo nome"
+        <input type="text" class="form-control"  placeholder="Inserisci il tuo nome"
           formControlName="name" [ngClass]="{'is-valid': isValid('name'), 'is-invalid': isInvalid('name')}">
         <span *ngIf="registerForm.controls['name'].dirty"
           [ngClass]="{ 'valid': isValid('name'), 'invalid': isInvalid('name') }">{{msg.name}}</span>
-        <label for="floatingName">Nome</label>
+        <label >Nome</label>
       </div>
       <div class="form-floating">
         <input [ngClass]="{ 'is-valid': isValid('surname'), 'is-invalid': isInvalid('surname')}" type="text"
           class="form-control" id="floatingSurname" placeholder="Inserisci il tuo cognome" formControlName="surname">
         <span *ngIf="registerForm.controls['surname'].dirty"
           [ngClass]="{ 'valid': isValid('surname'), 'invalid': isInvalid('surname') }">{{msg.surname}}</span>
-        <label for="floatingSurname">Cognome</label>
+        <label>Cognome</label>
       </div>
       <div class="form-floating">
         <input [ngClass]="{'is-valid': isValid('email'), 'is-invalid': isInvalid('email')}" type="email"
           class="form-control" id="floatingInput" placeholder="name@example.com" formControlName="email">
-        <label for="floatingInput">Indirizzo Email</label>
+        <label>Indirizzo Email</label>
         <span *ngIf="registerForm.controls['email'].dirty"
           [ngClass]="{ 'valid': isValid('email'), 'invalid': isInvalid('email') }">{{msg.email}}</span>
       </div>
       <div class="form-floating">
         <input [ngClass]="{'is-valid': isValid('password'), 'is-invalid': isInvalid('password')}" type="password"
           class="form-control" id="floatingPassword" placeholder="Password" formControlName="password">
-        <label for="floatingPassword">Password</label>
+        <label>Password</label>
         <span *ngIf="registerForm.controls['password'].dirty"
           [ngClass]="{ 'valid': isValid('password'), 'invalid': isInvalid('password') }">{{msg.password}}</span>
       </div>
@@ -36,7 +36,7 @@
         <input [ngClass]="{'is-valid': isValid('confirmPassword'), 'is-invalid': isInvalid('confirmPassword')}"
           type="password" class="form-control" id="floatingConfirmPassword" placeholder="Conferma Password"
           formControlName="confirmPassword">
-        <label for="floatingPassword">Conferma password</label>
+        <label>Conferma password</label>
         <span *ngIf="registerForm.controls['confirmPassword'].dirty"
           [ngClass]="{ 'valid':match, 'invalid':!match}">{{msg.confirmPassword}}</span>
 

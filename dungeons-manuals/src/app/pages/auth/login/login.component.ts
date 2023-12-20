@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { AuthService } from '../../../services/auth.service';
 import { AbstractControl, FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ILogin } from '../../../models/auth/i-login';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -10,47 +11,49 @@ import { ILogin } from '../../../models/auth/i-login';
 })
 export class LoginComponent {
 
-  constructor( private authSvc: AuthService, private fb:FormBuilder){}
+  constructor(private authSvc: AuthService, private fb: FormBuilder, private router: Router
+  ) { }
 
-  errorMsg!:ILogin;
+  errorMsg!: ILogin;
   msg!: ILogin;
+
+
+
 
 
   loginForm: FormGroup = this.fb.group({
 
-    email: this.fb.control(null, [Validators.required, Validators.pattern(/^[a-zA-Z\s]*$/)]),
+    email: this.fb.control(null, [Validators.required, Validators.pattern(/^[\w-.]+@([\w-]+.)+[\w-]{2,4}$/)]),
     password: this.fb.control(null, [Validators.required, Validators.minLength(8), Validators.maxLength(16)])
 
   });
 
-  invalidMessages(fieldName: string):string{
+  invalidMessages(fieldName: string): string {
 
     const field: AbstractControl | null = this.loginForm.get(fieldName);
     let errorMsg: string = ''
-    if (field){
+    if (field) {
 
-      if(field.errors){
+      if (field.errors) {
 
         if (field.errors['required']) errorMsg = 'Campo vuoto';
         if (field.errors['minLength']) errorMsg = 'Lunghezza minima password 8 caratteri';
         if (field.errors['maxLength']) errorMsg = 'Lunghezza massima password 16 caratteri';
         if (field.errors['pattern']) errorMsg = 'Formato mail errato';
-
       }
-
     }
     return errorMsg;
   }
 
-  isValid(inputName:string){
+  isValid(inputName: string) {
     return this.loginForm.get(inputName)?.valid && this.loginForm.get(inputName)?.dirty
   }
 
-  isInvalid(inputName:string){
+  isInvalid(inputName: string) {
     return !this.loginForm.get(inputName)?.valid && this.loginForm.get(inputName)?.dirty
   }
 
-  ngDoCheck(){
+  ngDoCheck() {
 
     this.errorMsg = {
 
@@ -66,32 +69,38 @@ export class LoginComponent {
 
     }
 
-    if (this.errorMsg.email){
+    if (this.errorMsg.email) {
 
       this.msg.email = this.errorMsg.email
 
-    }else{
+    } else {
 
       this.msg.email = 'Campo compilato correttamente'
 
     }
 
-    if (this.errorMsg.password){
+    if (this.errorMsg.password) {
 
       this.msg.password = this.errorMsg.password
 
-    }else{
+    } else {
 
       this.msg.password = 'Password corretta'
-
     }
-
   }
 
-  logIn():void{
 
-    if(this.loginForm.valid)
+  logIn(){
 
+    this.authSvc.logIn(this.loginForm.value).subscribe(data => {
+
+    })
   }
+
+
+
+
+
+
 
 }
