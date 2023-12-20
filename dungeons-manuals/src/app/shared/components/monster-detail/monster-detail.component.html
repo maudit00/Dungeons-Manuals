@@ -6,30 +6,53 @@
     </p>
   </div>
 
-  <div class="d-flex">
+  <div class="d-flex justify-content-center">
 
     <div>
       <img [src]="['../../../../assets/monsters/'+monsterDetails.index+'.png']" class="monster-icon rounded">
     </div>
 
-    <div class="mx-4">
-      <!-- <h4 class="purple">Stats</h4>
-      <ul>
-        <li>Strength <span class="purple">{{monsterDetails.strength}}</span></li>
-        <li>Dexterity <span class="purple">{{monsterDetails.dexterity}}</span></li>
-        <li>Constitution <span class="purple">{{monsterDetails.constitution}}</span></li>
-        <li>Intelligence <span class="purple">{{monsterDetails.intelligence}}</span></li>
-        <li>Wisdom <span class="purple">{{monsterDetails.wisdom}}</span></li>
-        <li>Charisma <span class="purple">{{monsterDetails.charisma}}</span></li>
-      </ul> -->
-
+    <div class="mx-4 text-center">
+      <h4 class="purple">Stats</h4>
       <app-stats-table [character]="monsterDetails"></app-stats-table>
     </div>
 
   </div>
 
-
-  <div>
-
+  <div class="d-flex justify-content-center my-3">
+    <div>
+      <h4 class="purple text-center">Info</h4>
+      <ul>
+        <li><span class="purple">Name: </span>{{monsterDetails.name}}</li>
+        <li><span class="purple">Size: </span>{{monsterDetails.size}}</li>
+        <li><span class="purple">Type: </span>{{monsterDetails.type}}</li>
+        <li><span class="purple">Alignment: </span>{{monsterDetails.alignment}}</li>
+        <li><span class="purple">Armor Class: </span>
+          <ul>
+            <li class="ms-3"><span class="purple">Type: </span>{{monsterDetails.armor_class[0].type}}</li>
+            <li class="ms-3"><span class="purple">Value: </span>{{monsterDetails.armor_class[0].value}}</li>
+          </ul>
+        </li>
+        <li><span class="purple">Hit points: </span>{{monsterDetails.hit_points}}</li>
+        <li><span class="purple">Hit dice: </span>{{monsterDetails.hit_dice}}</li>
+        <li><span class="purple">Hit points roll: </span>{{monsterDetails.hit_points_roll}}</li>
+        <li><span class="purple">Speed: </span>{{monsterDetails.speed.walk}}</li>
+        <li><span class="purple">Proficiencies: </span>
+          <ul *ngFor="let p of monsterDetails.proficiencies">
+            <li class="ms-3"><span class="purple">Value: </span>{{p.value}}</li>
+            <li class="ms-3">{{p.proficiency.name}}</li>
+          </ul>
+        </li>
+        <li *ngIf="monsterDetails.damage_vulnerabilities.length">
+          <p>Damage Vulnerabilities:</p>
+          <ul *ngFor="let d of monsterDetails.damage_vulnerabilities" >
+            <li>{{d}}</li>
+          </ul>
+        </li>
+        <li *ngIf="!monsterDetails.damage_vulnerabilities.length">
+          {{monsterDetails.name}} has no damage vulnerabilities.
+        </li>
+      </ul>
+    </div>
   </div>
 </div>
