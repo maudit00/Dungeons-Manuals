@@ -4,8 +4,9 @@ import { Injectable } from '@angular/core';
 import { environment } from '../../environments/environment.development';
 import { IClass} from '../Models/i-class';
 import { Observable } from 'rxjs';
-import { IRes } from '../Models/i-ref';
+import { IRef, IRes } from '../Models/i-ref';
 import { ISubClass} from '../Models/i-sub-class';
+
 
 @Injectable({
   providedIn: 'root'
@@ -39,5 +40,8 @@ export class ClassesService {
     return this.http.get<Levels>(`${this.subClassUrl}${index}/levels`)
   }
 
+  getSubClassesFeatures(index : string):Observable<IRes>{
+    return this.http.get<IRes>(`${this.subClassUrl}${index}/features`)
+  }
 
 }
