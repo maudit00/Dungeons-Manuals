@@ -7,7 +7,7 @@ import { SubClassComponent } from '../../shared/components/sub-class/sub-class.c
 const routes: Routes = [
 	{
 		path: '',
-	       	component: SubClassesComponent
+	  component: SubClassesComponent
   },
 	{
 		path: ':index',
