@@ -8,6 +8,7 @@ tr{
 
 .stat{
   margin:0px 0;
+  font-weight: bold;
 }
 
 .name-stat{
@@ -16,9 +17,18 @@ tr{
 }
 
 .mod{
-  border: 1px solid black;
-  border-radius: 50%;
-  width:50%;
+  border: 2px solid var(--primary-purple);
+  border-radius: 100%;
+  width: 40%;
   background-color: white;
   margin:0 auto;
+}
+
+.purple {
+  font-weight: bold;
+  color: var(--primary-purple);
+}
+
+.border-stats{
+  border:2px solid var(--primary-purple);
 }
