@@ -1,0 +1,17 @@
+<div class="container">
+  <form [formGroup]="loginForm" (ngSubmit)="logIn()" >
+    <h1 class="h3 mb-3 fw-normal">Please sign in</h1>
+
+    <div class="form-floating">
+      <input id="email" type="email" class="form-control" formControlName="email" [ngClass]="{'is-Valid': isValid('email'), 'is-Invalid': isInvalid('email')}" placeholder="name@example.com">
+      <label>Email address</label>
+      <span *ngIf="loginForm.controls['email'].dirty" [ngClass]="{'valid': isValid('email'), 'invalid': isInvalid('email')}">{{msg.email}}</span>
+    </div>
+    <div class="form-floating">
+      <input id='password' type="password" class="form-control" formControlName="password" [ngClass]="{'is-Valid': isValid('password'), 'is-Invalid': isInvalid('password')}" placeholder="Password">
+      <label >Password</label>
+      <span *ngIf="loginForm.controls['password'].dirty" [ngClass]="{'valid': isValid('password'), 'invalid': isInvalid('password')}">{{msg.password}}</span>
+    </div>
+    <button class="btn btn-primary w-100 py-2" type="submit">Sign in</button>
+  </form>
+</div>

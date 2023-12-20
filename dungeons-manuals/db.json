@@ -1,0 +1,52 @@
+{
+  "users": [
+    {
+      "email": "fisyqix@mailinator.com",
+      "password": "$2a$10$9sp.NRosGr1qlsx/2Ub6H.v8jnXfptIu3NINSQJYwVgelsjy1m5i.",
+      "name": "Possimus earum numq",
+      "surname": "Gardner",
+      "confirmPassword": "55555555",
+      "id": 1
+    },
+    {
+      "email": "hysicinyl@mailinator.com",
+      "password": "$2a$10$/Nm91Nq6jivmFtSIik1WweVCpIynLETV0CyHZwYiJW1kuxEAQUEJa",
+      "name": "Ut itaque atque qui ",
+      "surname": "Strickland",
+      "confirmPassword": "Pa$$w0rd!",
+      "id": 2
+    },
+    {
+      "email": "zenajo@mailinator.com",
+      "password": "$2a$10$KsQSqvhTITRxZslJJ2eLeedKcUWf54wTsFHQ2/LdMU1iuQR8tJMly",
+      "name": "Eius quia distinctio",
+      "surname": "Ball",
+      "confirmPassword": "55555555",
+      "id": 3
+    },
+    {
+      "email": "rozebab@mailinator.com",
+      "password": "$2a$10$BTVL3TFNmgTH8hX8oyOiU.skMIL9CrB.fYJ07OnShKnKjPkwSxflC",
+      "name": "Quis qui iste eum re",
+      "surname": "Fisher",
+      "confirmPassword": "Pa$$w0rd!",
+      "id": 4
+    },
+    {
+      "email": "pudobek@mailinator.com",
+      "password": "$2a$10$hty6VqXRTklFzCDG4rn2YOmUGIiDOeSbWlRRorrd5EfWYGqaNVhuC",
+      "name": "A facere aliquip exe",
+      "surname": "Sloan",
+      "confirmPassword": "Pa$$w0rd!",
+      "id": 5
+    },
+    {
+      "email": "dacadywupu@mailinator.com",
+      "password": "$2a$10$iwSCbFCFEHB7cx7z32jesexGYBSnvk2.pdG2fHaln3vW6ue4dbvTG",
+      "name": "Ut laborum Eligendi",
+      "surname": "Holt",
+      "confirmPassword": "55555555",
+      "id": 6
+    }
+  ]
+}
