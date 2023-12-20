@@ -7,7 +7,8 @@ import { NgbAccordionModule } from '@ng-bootstrap/ng-bootstrap';
 import { RouterModule } from '@angular/router';
 import { SubClassComponent} from './components/sub-class/sub-class.component';
 import { MonsterDetailComponent } from './components/monster-detail/monster-detail.component';
-import { SpellTableComponent } from './components/spell-table/spell-table.component'
+import { SpellTableComponent } from './components/spell-table/spell-table.component';
+import { SpellDetailComponent } from './components/spell-detail-component/spell-detail-component'
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { SpellTableComponent } from './components/spell-table/spell-table.compon
     ClassDetailComponent,
     SubClassComponent,
     MonsterDetailComponent,
-    SpellTableComponent
+    SpellTableComponent,
+    SpellDetailComponent
   ],
   imports: [
     CommonModule,

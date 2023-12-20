@@ -1,8 +1,23 @@
-.col-4{
-  margin-bottom:25px
-}
 .spell-list{
   height: 300px;
+  overflow-x:hidden;
   overflow-y: scroll;
 }
-app-spell-table{}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius:10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--primary-purple);
+  border-radius:10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
