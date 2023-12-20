@@ -1,1 +1,89 @@
-<p>monster-detail works!</p>
+<div class="container">
+
+  <div class="align-items-center">
+    <p class="h1 text-center">
+      {{monsterDetails.name}}
+    </p>
+  </div>
+
+  <div>
+
+    <div>
+      <img [src]="['../../../../assets/monsters/'+monsterDetails.index+'.png']" class="monster-icon rounded">
+    </div>
+
+    <div>
+
+    </div>
+
+  </div>
+
+
+  <div class="row">
+    <div class="col-12 row mb-5">
+      <!-- <div class="col-6">
+        <p class="fw-bold">Starting Equipment</p>
+      </div> -->
+      <!-- <div class="col-6">
+        <div *ngFor="let p of monsterDetails.starting_equipment">
+          <p>Type : {{p.equipment.name}}</p>
+          <p>Quantity : {{p.quantity}} </p>
+
+        </div>
+      </div> -->
+      <!-- </div>
+    <div class="col-12 row mb-5">
+      <div class="col-6">
+        <p class="fw-bold">Starting Equipment Options</p>
+      </div>
+      <div class="col-6">
+        <div *ngFor="let p of monsterDetails.starting_equipment_options">
+          <p >Description : {{p.desc}}</p>
+          <p >Type : {{p.type}} </p>
+
+        </div>
+      </div>
+    </div>
+    <div class="col-12 row mb-5">
+      <div class="col-6">
+        <p class="fw-bold">Proficiencies</p>
+      </div>
+      <div class="col-6">
+        <span *ngFor="let p of monsterDetails.proficiencies">
+          <p class="d-inline">{{p.name}}, </p>
+        </span>
+      </div>
+    </div>
+    <div class="col-12 row mb-5">
+      <div class="col-6">
+        <p class="fw-bold">Proficiencies Choices</p>
+      </div>
+      <div class="col-6">
+        <div *ngFor="let p of monsterDetails.proficiency_choices">
+          <p>Description : {{p.desc}}, </p>
+          <p>Choose : {{p.choose}}, </p>
+        </div>
+      </div>
+    </div>
+    <div class="col-12 row mb-5">
+      <div class="col-6">
+        <p class="fw-bold">Sub-Classes</p>
+      </div>
+      <div class="col-6">
+        <span *ngFor="let p of monsterDetails.subclasses">
+		<a [routerLink]="['/subclasses',p.index]"><p class="d-inline">{{p.name}}, </p></a>
+        </span>
+      </div>
+    </div>
+    <div class="col-12 row mb-5">
+      <div class="col-6">
+        <p class="fw-bold">Saving Throws</p>
+      </div>
+      <div class="col-6">
+        <span *ngFor="let p of monsterDetails.saving_throws">
+          <p class="d-inline">{{p.name}}, </p>
+        </span>
+      </div>
+    </div> -->
+    </div>
+  </div>

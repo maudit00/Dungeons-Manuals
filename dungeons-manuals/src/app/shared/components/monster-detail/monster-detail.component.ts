@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { MonsterService } from '../../../Services/monster.service';
+import { IMonster } from '../../../Models/i-monster';
 
 @Component({
   selector: 'app-monster-detail',
@@ -8,11 +10,19 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class MonsterDetailComponent {
   constructor(
-    private url:ActivatedRoute
-  ){}
+    private url: ActivatedRoute,
+    private monstersSvc: MonsterService,
+    private active: ActivatedRoute
+  ) { }
 
-  ngOnInit(){
-    this.url.params.subscribe(params => console.log(params)
-    )
+  monsterChosen: string = ''
+  monsterDetails!: IMonster;
+
+  ngOnInit() {
+    this.active.params.subscribe(params => {
+      this.monstersSvc.getMonsterByIndex(params['index']).subscribe(monster => {
+        this.monsterDetails = monster
+      })
+    })
   }
 }
