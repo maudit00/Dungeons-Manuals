@@ -3,7 +3,10 @@
 .monster-card {
   cursor: pointer;
   transition: 0.5s;
-  width:350px;
+  width:320px;
+  border: 2px solid var(--primary-purple);
+  text-align: center;
+  background-color: var(--background-azure);
   &:hover {
     transform: scale(1.03);
     -webkit-box-shadow: 1px 1px 12px 5px var(--primary-purple);
@@ -17,7 +20,7 @@
     border: 2px solid var(--primary-purple);
   }
   h5{
-    color: var(--primary-purple-);
+    color: var(--primary-purple);
   }
 }
 
