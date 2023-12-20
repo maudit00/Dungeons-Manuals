@@ -19,6 +19,7 @@ export class ClassesService {
   subClassUrl: string = `${environment.api_url}/api/subclasses/`
   subClassLevelsUrl: string = `${environment.api_url}/api/subclasses/berserker/levels`
 
+
   getSpecificClass(index: string): Observable<IClass> {
     return this.http.get<IClass>(`${this.classUrl}${index}`)
   }

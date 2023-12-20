@@ -114,13 +114,12 @@ export class RegisterComponent {
     return !this.registerForm.get(inputName)?.valid && this.registerForm.get(inputName)?.dirty
   }
 
-
-
   register(){
+    const registerData: any = this.registerForm.value
+    delete registerData.confirmPassword
+    console.log(this.registerForm);
     this.authSvc.signUp(this.registerForm.value).subscribe(res =>{
       this.registered = true
-      console.log(res);
-
     });
   }
 }

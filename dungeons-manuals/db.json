@@ -55,6 +55,28 @@
       "surname": "Castillo",
       "confirmPassword": "55555555",
       "id": 7
+    },
+    {
+      "email": "woso@mailinator.com",
+      "password": "$2a$10$WABYus7xzTwDbmQBcKdb9ONTe01Vp93S73NzwqoQncHNEQ/4oXUAO",
+      "name": "Non et in ut rerum s",
+      "surname": "Hester",
+      "id": 8
+    },
+    {
+      "email": "fora@mailinator.com",
+      "password": "$2a$10$AXJ7Np8GrRLwnjFkyZ8hBOViUNpH84Fc.E4Fqf9jxElA8IstX6e/u",
+      "name": "Id voluptates consec",
+      "surname": "Malone",
+      "confirmPassword": "Pa$$w0rd!",
+      "id": 9
+    },
+    {
+      "email": "locivygesi@mailinator.com",
+      "password": "$2a$10$g7GttipyMULQk6i0AhqGzOiW8P2qLv5wbFUj8hinx2tSGrLmEU0jm",
+      "name": "Autem consequatur o",
+      "surname": "Haynes",
+      "id": 10
     }
   ]
 }
