@@ -2,6 +2,11 @@
 
 /* Importing Bootstrap SCSS file. */
 @import 'bootstrap/scss/bootstrap';
+@import url('https://fonts.googleapis.com/css2?family=Cabin:wght@400;700&display=swap');
+
+*{
+  font-family: 'Cabin', sans-serif;
+}
 
 :root{
   --primary-purple: #6222FF;
@@ -17,5 +22,11 @@
 .invalid {
 
   color: red;
+
+}
+
+app-monster{
+
+  height: calc(100vh - 400px);
 
 }
