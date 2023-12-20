@@ -27,7 +27,6 @@ import { RaceComponent } from './components/race/race.component';
     StatsTableComponent,
     NgbAccordionModule,
     RouterModule,
-    RaceComponent,
   ]
 })
 export class SharedModule { }
