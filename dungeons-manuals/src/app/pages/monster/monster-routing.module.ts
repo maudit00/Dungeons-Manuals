@@ -6,7 +6,7 @@ import { MonsterDetailComponent } from '../../shared/components/monster-detail/m
 
 const routes: Routes = [
   { path: '', component: MonsterComponent },
-  {path:':index', component: MonsterDetailComponent}
+  { path:':index', component: MonsterDetailComponent }
 ];
 
 @NgModule({

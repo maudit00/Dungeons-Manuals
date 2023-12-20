@@ -12,6 +12,7 @@ const routes: Routes = [
   { path: 'classes', loadChildren: () => import('./pages/classes/classes.module').then(m => m.ClassesModule) },
   { path: 'monsters', loadChildren: () => import('./pages/monster/monster.module').then(m => m.MonsterModule) },
   { path: 'subclasses', loadChildren: () => import('./pages/sub-classes/sub-classes.module').then(m => m.SubClassesModule) },
+  { path: 'spells', loadChildren: () => import('./pages/spells/spells.module').then(m => m.SpellsModule) },
 ];
 
 @NgModule({
