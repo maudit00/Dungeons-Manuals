@@ -1,16 +1,22 @@
 <p class="h1 text-center">{{subClassDetails.name}}</p>
 <div class="container">
   <div class="row">
+    <!-- PRENDE L'IM -->
     <img  class="col-6 col-lg-3"[src]="['../../../../assets/img/'+subClassDetails.index+'.jpeg']">
     <div class="col-6 col-lg-9">
       <p>{{subClassDetails.desc}}</p>
       <div>
         <p class="fw-bold">Skills Levels Unlock</p>
+        <!-- CICLA LEVELS OVVER LE SKILL CHE SBLOCCA NEI VARI LIVELLI LA SOTTOCLASSE -->
         <div *ngFor="let level of levels">
+          <!-- CICLA NOME ABILITÀ E IL LIVELLO IN CUI LA SBLOCCA -->
           <p *ngFor="let f of level.features">{{f.name}} Lvl: {{level.level}}</p>
         </div>
         </div>
     </div>
+  </div>
+  <div class="row">
+
   </div>
 </div>
 
