@@ -1,6 +1,6 @@
-<div class="container mt-5">
+<div class="container">
   <div class="row text-center justify-content-center">
-    <div [routerLink]="['/monsters', monster.index]"  class="col-12 col-md-6 col-lg-3 monster-card m-2 p-1 pb-2 rounded" *ngFor="let monster of monsterArray">
+    <div [routerLink]="['/monsters', monster.index]"  class="col-12 col-md-6 col-lg-3 monster-card m-2 p-2 rounded" *ngFor="let monster of monsterArray">
       <img class="rounded img-monster" [src]="['../../../assets/monsters/'+monster.index+'.png']" load="lazy">
       <h5 class="mt-2">{{monster.name}}</h5>
     </div>
