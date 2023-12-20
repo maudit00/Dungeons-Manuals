@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-stats-table',
@@ -6,15 +6,7 @@ import { Component } from '@angular/core';
   styleUrl: './stats-table.component.scss'
 })
 export class StatsTableComponent {
-  // @Input() character!:any;
-  character:any={
-    strength: 18,
-    dexterity: 9,
-    constitution:14,
-    intelligence:12,
-    wisdom:20,
-    charisma:15
-  }
+  @Input() character!:any;
 
   str!:number;
   dex!:number;

@@ -10,7 +10,7 @@ import { ISubClass } from '../../Models/i-sub-class';
   styleUrl: './sub-classes.component.scss'
 })
 export class SubClassesComponent {
-	subClassDetails!:ISubClass;
+  subClassDetails!:ISubClass;
   subClassesArr!: IRef[];
   loading:boolean = true
 
