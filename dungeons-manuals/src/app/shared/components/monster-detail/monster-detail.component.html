@@ -28,15 +28,24 @@
         <li><span class="purple">Type: </span>{{monsterDetails.type}}</li>
         <li><span class="purple">Alignment: </span>{{monsterDetails.alignment}}</li>
         <li><span class="purple">Armor Class: </span>
-          <ul>
-            <li class="ms-3"><span class="purple">Type: </span>{{monsterDetails.armor_class[0].type}}</li>
-            <li class="ms-3"><span class="purple">Value: </span>{{monsterDetails.armor_class[0].value}}</li>
+          <ul *ngFor=" let p of monsterDetails.armor_class">
+            <li class="ms-3"><span class="purple">Type: </span>{{p.type}}</li>
+            <li class="ms-3"><span class="purple">Value: </span>{{p.value}}</li>
           </ul>
         </li>
         <li><span class="purple">Hit points: </span>{{monsterDetails.hit_points}}</li>
         <li><span class="purple">Hit dice: </span>{{monsterDetails.hit_dice}}</li>
         <li><span class="purple">Hit points roll: </span>{{monsterDetails.hit_points_roll}}</li>
-        <li><span class="purple">Speed: </span>{{monsterDetails.speed.walk}}</li>
+        <li><span class="purple">Speed: </span>
+          <ul>
+            <li *ngIf="monsterDetails.speed.walk.length" class="ms-3"><span class="purple">Walk:
+              </span>{{monsterDetails.speed.walk}}</li>
+            <li *ngIf="monsterDetails.speed.swim.length" class="ms-3"><span class="purple">Swim:
+              </span>{{monsterDetails.speed.swim}}</li>
+            <li *ngIf="monsterDetails.speed.fly.length" class="ms-3"><span class="purple">Fly:
+              </span>{{monsterDetails.speed.fly}}</li>
+          </ul>
+        </li>
         <li><span class="purple">Proficiencies: </span>
           <ul *ngFor="let p of monsterDetails.proficiencies">
             <li class="ms-3"><span class="purple">Value: </span>{{p.value}}</li>
@@ -44,14 +53,79 @@
           </ul>
         </li>
         <li *ngIf="monsterDetails.damage_vulnerabilities.length">
-          <p>Damage Vulnerabilities:</p>
-          <ul *ngFor="let d of monsterDetails.damage_vulnerabilities" >
+          <span><span class="purple">Damage Vulnerabilities: </span></span>
+          <ul *ngFor="let d of monsterDetails.damage_vulnerabilities">
             <li>{{d}}</li>
           </ul>
         </li>
         <li *ngIf="!monsterDetails.damage_vulnerabilities.length">
-          {{monsterDetails.name}} has no damage vulnerabilities.
+          <span class="purple">Damage Vulnerabilities: </span>{{monsterDetails.name}} has no damage vulnerabilities.
         </li>
+
+        <li *ngIf="monsterDetails.damage_resistances.length">
+          <span><span class="purple">Damage resistances: </span></span>
+          <ul *ngFor="let d of monsterDetails.damage_resistances">
+            <li class="ms-3">{{d}}</li>
+          </ul>
+        </li>
+        <li *ngIf="!monsterDetails.damage_resistances.length">
+          <span class="purple">Damage Vulnerabilities: </span>{{monsterDetails.name}} has no Damage resistances.
+        </li>
+
+        <li *ngIf="monsterDetails.damage_immunities.length">
+          <span><span class="purple">Damage immunities: </span></span>
+          <ul *ngFor="let d of monsterDetails.damage_immunities">
+            <li class="ms-3">{{d}}</li>
+          </ul>
+        </li>
+        <li *ngIf="!monsterDetails.damage_immunities.length">
+          <span class="purple">Damage immunities: </span>{{monsterDetails.name}} has no Damage immunities.
+        </li>
+
+        <li *ngIf="monsterDetails.condition_immunities.length">
+          <span><span class="purple">Condition Immunities: </span></span>
+          <ul *ngFor="let d of monsterDetails.condition_immunities">
+            <li class="ms-3">{{d}}</li>
+          </ul>
+        </li>
+        <li *ngIf="!monsterDetails.condition_immunities.length">
+          <span class="purple">Condition immunities: </span>{{monsterDetails.name}} has no Condition immunities.
+        </li>
+
+        <li><span class="purple">Senses:</span>
+          <ul>
+            <li *ngIf="monsterDetails.senses.blindsight" class="ms-3"><span class="purple">Blindsight:
+              </span>{{monsterDetails.senses.blindsight}}</li>
+            <li *ngIf="monsterDetails.senses.darkvision" class="ms-3"><span class="purple">Darkvision:
+              </span>{{monsterDetails.senses.darkvision}}</li>
+            <li *ngIf="monsterDetails.senses.passive_perception" class="ms-3"><span class="purple">Passive Perception:
+              </span>{{monsterDetails.senses.passive_perception}}</li>
+          </ul>
+        </li>
+
+        <li><span class="purple">Languages :</span>{{monsterDetails.languages}}</li>
+        <li><span class="purple">Challenge rating :</span>{{monsterDetails.challenge_rating}}</li>
+        <li><span class="purple">Proficiency bonus :</span>{{monsterDetails.proficiency_bonus}}</li>
+        <li><span class="purple">XP :</span>{{monsterDetails.xp}}</li>
+
+        <li><span class="purple">special abilities :</span>
+          <ul *ngFor="let s of monsterDetails.special_abilities">
+            <li class="ms-3">{{s.name}}</li>
+            <li class="ms-3">{{s.desc}}</li>
+            <li class="ms-3" *ngIf="monsterDetails.special_abilities"><span class="purple">Usage:</span>
+              <ul class="ms-5">
+                <li>{{s.usage.type}}</li>
+                <li>{{s.usage.times}}</li>
+                <li><span class="purple">Rest types</span>
+                  <ul *ngFor="let p of s.usage.rest_types">
+                    <li>{{p}}</li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+
       </ul>
     </div>
   </div>

@@ -42,6 +42,7 @@ interface ArmorClass {
 interface Speed {
   walk: string
   swim: string
+  fly: string
 }
 
 interface Proficiencies {
@@ -51,13 +52,15 @@ interface Proficiencies {
 
 interface Senses {
   darkvision: string
-  passive_perception: number
+  passive_perception?: number
+  blindsight: string
 }
 
 interface SpecialAbility {
   name: string
   desc: string
   dc?: Dc
+  usage: Usage
 }
 
 interface Dc {
@@ -97,6 +100,7 @@ interface Damage {
 interface Usage {
   type: string
   times: number
+  rest_types?: []
 }
 
 interface LegendaryAction {
