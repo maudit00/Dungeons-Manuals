@@ -21,7 +21,7 @@ export class RegisterComponent {
   registerForm:FormGroup = this.fb.group({
 
     name: this.fb.control(null, [Validators.required, Validators.minLength(2), Validators.pattern(/^[a-zA-Z\s]*$/)]),
-    surname: this.fb.control(null, [Validators.required, Validators.minLength(2), Validators.pattern(/^[a-zA-Z\s]*$/)]),
+    surname: this.fb.control(null, [Validators.required, Validators.minLength(2), Validators.pattern(/^[a-zA-Z\'\s]+$/)]),
     email: this.fb.control(null, [Validators.required, Validators.pattern(/^[\w-.]+@([\w-]+.)+[\w-]{2,4}$/)]),
     password: this.fb.control(null, [Validators.required, Validators.minLength(8), Validators.maxLength(16)]),
     confirmPassword: this.fb.control(null, [Validators.required])
