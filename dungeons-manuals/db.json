@@ -47,6 +47,14 @@
       "surname": "Holt",
       "confirmPassword": "55555555",
       "id": 6
+    },
+    {
+      "email": "kepuwikuvu@mailinator.com",
+      "password": "$2a$10$.6ak2YLoFhVBPz4YJAYbiu6ZxDUaHAg4ZKbswLQtoUNLZA22fV8wu",
+      "name": "Corrupti ut adipisc",
+      "surname": "Castillo",
+      "confirmPassword": "55555555",
+      "id": 7
     }
   ]
 }

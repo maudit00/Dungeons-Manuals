@@ -91,16 +91,8 @@ export class LoginComponent {
 
 
   logIn(){
-
-    this.authSvc.logIn(this.loginForm.value).subscribe(data => {
-
+    this.authSvc.logIn(this.loginForm.value).subscribe(data =>{
+      alert('sel loggato')
     })
   }
-
-
-
-
-
-
-
 }
