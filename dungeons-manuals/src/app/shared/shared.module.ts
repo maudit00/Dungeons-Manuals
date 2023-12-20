@@ -6,14 +6,14 @@ import { ClassDetailComponent } from './components/class-detail/class-detail.com
 import { NgbAccordionModule } from '@ng-bootstrap/ng-bootstrap';
 import { RouterModule } from '@angular/router';
 import { SubClassComponent} from './components/sub-class/sub-class.component';
-import { MonsterDetailComponent } from './components/monster-detail/monster-detail.component'
+import { MonsterDetailComponent } from './components/monster-detail/monster-detail.component';
 
 @NgModule({
   declarations: [
     StatsTableComponent,
     ClassDetailComponent,
     SubClassComponent,
-    MonsterDetailComponent
+    MonsterDetailComponent,
   ],
   imports: [
     CommonModule,
@@ -24,7 +24,7 @@ import { MonsterDetailComponent } from './components/monster-detail/monster-deta
     HttpClientModule,
     StatsTableComponent,
     NgbAccordionModule,
-    RouterModule
+    RouterModule,
   ]
 })
 export class SharedModule { }
