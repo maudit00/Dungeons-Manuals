@@ -1,39 +1,42 @@
 <table>
-  <tbody>
-    <tr class="border border-dark text-center mb-3">
-      <td class="name-stat p-0">Str</td>
-      <td class="stat p-0">{{str}}</td>
-      <td class="mod p-0">{{modStr}}</td>
-    </tr>
+  <tbody class="d-flex gap-4">
+    <div>
+      <tr class="border-stats rounded text-center mb-4">
+        <td class="name-stat p-0 purple">Str</td>
+        <td class="stat p-0">{{str}}</td>
+        <td class="mod p-0 purple">{{modStr}}</td>
+      </tr>
 
-    <tr class="border border-dark text-center mb-3">
-      <td class="name-stat p-0">Dex</td>
-      <td class="stat p-0">{{dex}}</td>
-      <td class="mod p-0">{{modDex}}</td>
-    </tr>
+      <tr class="border border-dark text-center mb-4">
+        <td class="name-stat p-0 purple">Dex</td>
+        <td class="stat p-0">{{dex}}</td>
+        <td class="mod p-0">{{modDex}}</td>
+      </tr>
 
-    <tr class="border border-dark text-center mb-3">
-      <td class="name-stat p-0">Con</td>
-      <td class="stat p-0">{{con}}</td>
-      <td class="mod p-0">{{modCon}}</td>
-    </tr>
+      <tr class="border border-dark text-center mb-4">
+        <td class="name-stat p-0 purple">Con</td>
+        <td class="stat p-0">{{con}}</td>
+        <td class="mod p-0">{{modCon}}</td>
+      </tr>
+    </div>
+    <div>
+      <tr class="border border-dark text-center mb-4">
+        <td class="name-stat p-0">Int</td>
+        <td class="stat p-0">{{int}}</td>
+        <td class="mod p-0">{{modInt}}</td>
+      </tr>
 
-    <tr class="border border-dark text-center mb-3">
-      <td class="name-stat p-0">Int</td>
-      <td class="stat p-0">{{int}}</td>
-      <td class="mod p-0">{{modInt}}</td>
-    </tr>
+      <tr class="border border-dark text-center mb-4">
+        <td class="name-stat p-0">Wis</td>
+        <td class="stat p-0">{{character.wisdom}}</td>
+        <td class="mod p-0">{{modWis}}</td>
+      </tr>
 
-    <tr class="border border-dark text-center mb-3">
-      <td class="name-stat p-0">Wis</td>
-      <td class="stat p-0">{{character.wisdom}}</td>
-      <td class="mod p-0">{{modWis}}</td>
-    </tr>
-
-    <tr class="border border-dark text-center mb-3">
-      <td class="name-stat p-0">Cha</td>
-      <td class="stat p-0">{{cha}}</td>
-      <td class="mod p-0">{{modCha}}</td>
-    </tr>
+      <tr class="border border-dark text-center mb-4">
+        <td class="name-stat p-0">Cha</td>
+        <td class="stat p-0">{{cha}}</td>
+        <td class="mod p-0">{{modCha}}</td>
+      </tr>
+    </div>
   </tbody>
 </table>
