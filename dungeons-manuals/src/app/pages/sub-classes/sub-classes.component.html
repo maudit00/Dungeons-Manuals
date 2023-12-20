@@ -1,0 +1,26 @@
+<div ngbAccordion #accordion="ngbAccordion">
+	<div  *ngFor="let subc of subClassesArr" [ngbAccordionItem]="subc.name">
+		<h2 ngbAccordionHeader>
+			<button ngbAccordionButton (click)="getSubClassDetails(subc)">{{subc.name}}</button>
+		</h2>
+		<div ngbAccordionCollapse>
+			<div ngbAccordionBody>
+				<ng-template>
+					<p>{{subClassDetails.name}}</p>
+					<p>{{subClassDetails.desc}}</p>
+					<p>{{subClassDetails.spells | json}}</p>
+				</ng-template>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+<hr />
+
+
+<div class="d-flex justify-content-center">
+<button class="btn btn-sm btn-outline-primary me-2" (click)="accordion.expandAll()">Toggle All</button>
+
+<button class="btn btn-sm btn-outline-primary me-2" (click)="accordion.collapseAll()">Collapse All</button>
+</div>

@@ -1,0 +1,78 @@
+
+<div class="d-flex justify-content-center align-items-center mb-5 gap-3">
+  <p class="h1 text-center">
+    {{classDetails.name}}
+  </p>
+  <img [src]="['../../../../assets/img/'+classDetails.index+'.jpeg']" class="class-icon ">
+</div>
+
+<div class="container mt-5">
+
+  <div class="row">
+    <div class="col-12 row mb-5">
+      <div class="col-6">
+        <p class="fw-bold">Starting Equipment</p>
+      </div>
+      <div class="col-6">
+        <div *ngFor="let p of classDetails.starting_equipment">
+          <p>Type : {{p.equipment.name}}</p>
+          <p>Quantity : {{p.quantity}} </p>
+
+        </div>
+      </div>
+    </div>
+    <div class="col-12 row mb-5">
+      <div class="col-6">
+        <p class="fw-bold">Starting Equipment Options</p>
+      </div>
+      <div class="col-6">
+        <div *ngFor="let p of classDetails.starting_equipment_options">
+          <p >Description : {{p.desc}}</p>
+          <p >Type : {{p.type}} </p>
+
+        </div>
+      </div>
+    </div>
+    <div class="col-12 row mb-5">
+      <div class="col-6">
+        <p class="fw-bold">Proficiencies</p>
+      </div>
+      <div class="col-6">
+        <span *ngFor="let p of classDetails.proficiencies">
+          <p class="d-inline">{{p.name}}, </p>
+        </span>
+      </div>
+    </div>
+    <div class="col-12 row mb-5">
+      <div class="col-6">
+        <p class="fw-bold">Proficiencies Choices</p>
+      </div>
+      <div class="col-6">
+        <div *ngFor="let p of classDetails.proficiency_choices">
+          <p>Description : {{p.desc}}, </p>
+          <p>Choose : {{p.choose}}, </p>
+        </div>
+      </div>
+    </div>
+    <div class="col-12 row mb-5">
+      <div class="col-6">
+        <p class="fw-bold">Sub-Classes</p>
+      </div>
+      <div class="col-6">
+        <span *ngFor="let p of classDetails.subclasses">
+		<a [routerLink]="['/subclasses',p.index]"><p class="d-inline">{{p.name}}, </p></a>
+        </span>
+      </div>
+    </div>
+    <div class="col-12 row mb-5">
+      <div class="col-6">
+        <p class="fw-bold">Saving Throws</p>
+      </div>
+      <div class="col-6">
+        <span *ngFor="let p of classDetails.saving_throws">
+          <p class="d-inline">{{p.name}}, </p>
+        </span>
+      </div>
+    </div>
+  </div>
+</div>
