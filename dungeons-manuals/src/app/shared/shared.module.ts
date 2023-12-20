@@ -5,13 +5,15 @@ import { StatsTableComponent } from './components/stats-table/stats-table.compon
 import { ClassDetailComponent } from './components/class-detail/class-detail.component';
 import { NgbAccordionModule } from '@ng-bootstrap/ng-bootstrap';
 import { RouterModule } from '@angular/router';
-import { SubClassComponent} from './components/sub-class/sub-class.component'
+import { SubClassComponent} from './components/sub-class/sub-class.component';
+import { MonsterDetailComponent } from './components/monster-detail/monster-detail.component'
 
 @NgModule({
   declarations: [
     StatsTableComponent,
     ClassDetailComponent,
-    SubClassComponent
+    SubClassComponent,
+    MonsterDetailComponent
   ],
   imports: [
     CommonModule,
