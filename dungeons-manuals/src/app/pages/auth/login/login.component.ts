@@ -37,8 +37,8 @@ export class LoginComponent {
       if (field.errors) {
 
         if (field.errors['required']) errorMsg = 'Campo vuoto';
-        if (field.errors['minLength']) errorMsg = 'Lunghezza minima password 8 caratteri';
-        if (field.errors['maxLength']) errorMsg = 'Lunghezza massima password 16 caratteri';
+        if (field.errors['minLength'] && fieldName === 'passoword') errorMsg = 'Lunghezza minima password 8 caratteri';
+        if (field.errors['maxLength']&& fieldName === 'passoword') errorMsg = 'Lunghezza massima password 16 caratteri';
         if (field.errors['pattern']) errorMsg = 'Formato mail errato';
       }
     }

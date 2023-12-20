@@ -37,6 +37,7 @@ export class RegisterComponent {
         if (field.errors['required']) errorMsg = 'Campo vuoto'
         if (field.errors['pattern'] && fieldName === 'email') errorMsg = 'Formato email errato'
         if (field.errors['minlength'] && fieldName === 'password') errorMsg = 'Lunghezza minima password: 8 caratteri'
+        if (field.errors['minlength'] && fieldName === 'password') errorMsg = 'Lunghezza massima password: 16 caratteri'
         if (field.errors['minlength'] && (fieldName === 'name' || fieldName === 'surname')) errorMsg = 'Lunghezza minima: 2 caratteri'
         if (field.errors['pattern'] && (fieldName === 'name' || fieldName === 'surname')) errorMsg = 'Sono ammesse solo lettere dell\'alfabeto'
 
