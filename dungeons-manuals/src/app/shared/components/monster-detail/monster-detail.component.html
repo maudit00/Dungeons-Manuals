@@ -38,11 +38,11 @@
         <li><span class="purple">Hit points roll: </span>{{monsterDetails.hit_points_roll}}</li>
         <li><span class="purple">Speed: </span>
           <ul>
-            <li *ngIf="monsterDetails.speed.walk.length" class="ms-3"><span class="purple">Walk:
+            <li *ngIf="monsterDetails.speed.walk" class="ms-3"><span class="purple">Walk:
               </span>{{monsterDetails.speed.walk}}</li>
-            <li *ngIf="monsterDetails.speed.swim.length" class="ms-3"><span class="purple">Swim:
+            <li *ngIf="monsterDetails.speed.swim" class="ms-3"><span class="purple">Swim:
               </span>{{monsterDetails.speed.swim}}</li>
-            <li *ngIf="monsterDetails.speed.fly.length" class="ms-3"><span class="purple">Fly:
+            <li *ngIf="monsterDetails.speed.fly" class="ms-3"><span class="purple">Fly:
               </span>{{monsterDetails.speed.fly}}</li>
           </ul>
         </li>
@@ -114,7 +114,7 @@
             <li class="ms-3"><span class="purple">({{i+1}}) Desc: </span>{{s.desc}}</li>
 
             <li *ngIf="s.usage">
-
+              <span class="purple">Usage: </span>
               <ul>
                 <li><span class="purple">Type: </span>{{s.usage.type}}</li>
                 <li><span class="purple">Times: </span>{{s.usage.times}}</li>
@@ -124,6 +124,50 @@
               </ul>
             </li>
 
+            <li> <span class="purple">Actions: </span>
+              <ul *ngFor="let a of monsterDetails.actions, let i = index">
+                <li class="ms-3"><span class="purple">({{i+1}}) Name: </span>{{a.name}}</li>
+                <li class="ms-3"><span class="purple">({{i+1}}) Multiattack type: </span>{{a.multiattack_type}}</li>
+                <li class="ms-3"><span class="purple">({{i+1}}) Des: </span>{{a.desc}}</li>
+                <li class="ms-3"><span class="purple">({{i+1}}) Actions: </span>
+                  <ul *ngFor="let m of a.actions">
+                    <li><span class="purple">Action name: </span>{{m.action_name}}</li>
+                    <li><span class="purple">Count: </span>{{m.count}}</li>
+                    <li><span class="purple">Type: </span>{{m.type}}</li>
+                  </ul>
+                </li>
+                <li class="ms-3"><span class="purple">({{i+1}}) Attack bonus: </span>{{a.attack_bonus}}</li>
+                <li class="ms-3"><span class="purple">({{i+1}}) Damage: </span>
+                  <ul *ngFor="let d of a.damage">
+                    <li><span class="purple">Damage Type: </span>
+                      <ul>
+                        <li><span class="purple">Name: </span>{{d.damage_type.name}}</li>
+                      </ul>
+                      <span class="purple">Damage dice: </span>{{d.damage_dice}}
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+        <li> <span class="purple">Legendary actions: </span>
+          <ul *ngFor="let l of monsterDetails.legendary_actions">
+            <li><span class="purple">Name: </span>{{l.name}}</li>
+            <li><span class="purple">Desc: </span>{{l.desc}}</li>
+            <li><span class="purple">Dc type: </span>
+              <ul class="ms-3">
+                <li><span class="purple">Name: </span>{{l.dc?.dc_type?.name}}</li>
+                <li><span class="purple">Dc value: </span>{{l.dc?.dc_value}}</li>
+                <li><span class="purple">Dc success type: </span>{{l.dc?.success_type}}</li>
+                <li><span class="purple">Damage: </span>
+                  <ul class="ms-3" *ngFor="let d of l.damage">
+                    <li><span class="purple">Name: </span>{{d.damage_type.name}}</li>
+                    <li><span class="purple">Damage dice: </span>{{d.damage_dice}}</li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
           </ul>
         </li>
 
