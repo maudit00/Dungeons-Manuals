@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { MonsterService } from '../../../Services/monster.service';
 import { IMonster } from '../../../Models/i-monster';
-
+import { ViewportScroller } from '@angular/common';
 @Component({
   selector: 'app-monster-detail',
   templateUrl: './monster-detail.component.html',
@@ -10,9 +10,9 @@ import { IMonster } from '../../../Models/i-monster';
 })
 export class MonsterDetailComponent {
   constructor(
-    private url: ActivatedRoute,
-    private monstersSvc: MonsterService,
-    private active: ActivatedRoute
+	  private viewportScroller: ViewportScroller,
+	  private monstersSvc: MonsterService,
+	  private active: ActivatedRoute
   ) { }
 
   monsterChosen: string = ''
@@ -58,10 +58,17 @@ export class MonsterDetailComponent {
   };
 
   ngOnInit() {
-    this.active.params.subscribe(params => {
-      this.monstersSvc.getMonsterByIndex(params['index']).subscribe(monster => {
-        this.monsterDetails = monster
-      })
-    })
+	  this.viewportScroller.scrollToPosition([0,0])
+	  console.log(this.viewportScroller.scrollToPosition([0,0]))
+	    this.active.params.subscribe(params => {
+	      this.monstersSvc.getMonsterByIndex(params['index']).subscribe(monster => {
+		this.monsterDetails = monster
+	      })
+	    })
   }
+
+  scrollTo(anchor:string):void{
+	  this.viewportScroller.scrollToAnchor(anchor);
+  }
+  
 }
