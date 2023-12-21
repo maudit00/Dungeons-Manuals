@@ -19,3 +19,12 @@ ul {
   justify-content: center;
   max-width: 610px;
 }
+
+.backToTop{
+  background-color: var(--primary-purple);
+  color: white;
+  transition: 0.3s;
+  &:hover{
+    transform: scale(1.03);
+  }
+}
