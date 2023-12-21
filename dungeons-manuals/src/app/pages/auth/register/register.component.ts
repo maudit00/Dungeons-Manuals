@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { AbstractControl, FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { AuthService } from '../../../services/auth.service';
-import { IRegister } from '../../../models/auth/i-register';
+import { AuthService } from '../../../Services/auth.service';
+import { IRegister } from '../../../Models/auth/i-register';
 
 @Component({
   selector: 'app-register',

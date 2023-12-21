@@ -1,12 +1,12 @@
-import { IAuthData } from './../models/auth/i-auth-data';
+import { IAuthData } from '../Models/auth/i-auth-data';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { IRegister } from '../models/auth/i-register';
+import { IRegister } from '../Models/auth/i-register';
 import { BehaviorSubject, Observable, map, tap } from 'rxjs';
 import { environment } from '../../environments/environment.development';
 import { JwtHelperService } from '@auth0/angular-jwt';
 import { Router } from '@angular/router';
-import { ILogin } from '../models/auth/i-login';
+import { ILogin } from '../Models/auth/i-login';
 
 @Injectable({
   providedIn: 'root'
