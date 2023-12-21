@@ -1,5 +1,6 @@
 import { Component, Input } from '@angular/core';
-import { IDamageAtCharacterLevel } from '../../../Models/i-spell';
+import { IDamageAtCharacterLevel } from '../../../models/i-spell';
+
 
 @Component({
   selector: 'app-trick-damage-table',
@@ -7,5 +8,5 @@ import { IDamageAtCharacterLevel } from '../../../Models/i-spell';
   styleUrl: './trick-damage-table.component.scss'
 })
 export class TrickDamageTableComponent {
-  @Input() damage!: IDamageAtCharacterLevel
+  @Input() damage!:IDamageAtCharacterLevel
 }
