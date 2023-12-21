@@ -1,9 +1,8 @@
 <div class="container">
   <div class="row text-center justify-content-center">
     <div [routerLink]="[]"  class="col-12 col-md-6 col-lg-3 traits-card m-2 p-2 rounded" *ngFor="let t of traits">
-      <img class="rounded img-traits" [src]="['../../../assets/traits/'+t.index+'.jpeg']" load="lazy">
+      <img class="rounded img-traits" [src]="['../../../assets/traits/'+ t.index +'.jpeg']" load="lazy">
       <h5 class="mt-2"><a>{{t.index}}</a></h5>
-      <h5>{{t.url}}</h5>
     </div>
   </div>
 </div>
