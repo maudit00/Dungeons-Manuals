@@ -8,7 +8,7 @@ import { RouterModule } from '@angular/router';
 import { SubClassComponent} from './components/sub-class/sub-class.component';
 import { MonsterDetailComponent } from './components/monster-detail/monster-detail.component';
 import { SpellTableComponent } from './components/spell-table/spell-table.component';
-import { TraisDetailComponent } from './components/traits-detail/trais-detail.component'
+import { TraitsDetailComponent } from './components/traits-detail/traits-detail.component'
 import { RaceComponent } from './components/race/race.component';
 import { TrickDamageTableComponent } from './components/trick-damage-table/trick-damage-table.component';
 import { SpellDamageTableComponent } from './components/spell-damage-table/spell-damage-table.component';
@@ -23,7 +23,7 @@ import { SpellDetailComponent } from './components/spell-detail-component/spell-
     MonsterDetailComponent,
     SpellTableComponent,
     SpellDetailComponent,
-    TraisDetailComponent,
+    TraitsDetailComponent,
     TrickDamageTableComponent,
     SpellDamageTableComponent,
     SpellHealTableComponent,
