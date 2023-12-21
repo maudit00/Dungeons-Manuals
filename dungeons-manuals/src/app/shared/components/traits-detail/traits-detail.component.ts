@@ -5,10 +5,10 @@ import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-trais-detail',
-  templateUrl: './trais-detail.component.html',
-  styleUrl: './trais-detail.component.scss'
+  templateUrl: './traits-detail.component.html',
+  styleUrl: './traits-detail.component.scss'
 })
-export class TraisDetailComponent {
+export class TraitsDetailComponent {
 
   traitDetails!:ITrDetail
 
