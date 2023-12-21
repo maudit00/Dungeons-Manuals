@@ -109,20 +109,21 @@
         <li><span class="purple">XP :</span>{{monsterDetails.xp}}</li>
 
         <li><span class="purple">special abilities :</span>
-          <ul *ngFor="let s of monsterDetails.special_abilities">
-            <li class="ms-3">{{s.name}}</li>
-            <li class="ms-3">{{s.desc}}</li>
-            <li class="ms-3" *ngIf="monsterDetails.special_abilities"><span class="purple">Usage:</span>
-              <ul class="ms-5">
-                <li>{{s.usage.type}}</li>
-                <li>{{s.usage.times}}</li>
-                <li><span class="purple">Rest types</span>
-                  <ul *ngFor="let p of s.usage.rest_types">
-                    <li>{{p}}</li>
-                  </ul>
-                </li>
+          <ul *ngFor="let s of monsterDetails.special_abilities, let i = index">
+            <li class="ms-3"><span class="purple">({{i+1}}) Name: </span>{{s.name}}</li>
+            <li class="ms-3"><span class="purple">({{i+1}}) Desc: </span>{{s.desc}}</li>
+
+            <li *ngIf="s.usage">
+
+              <ul>
+                <li><span class="purple">Type: </span>{{s.usage.type}}</li>
+                <li><span class="purple">Times: </span>{{s.usage.times}}</li>
+                <ul *ngIf="s.usage.rest_types?.length">
+                  <li *ngFor="let r of s.usage.rest_types">{{r}}</li>
+                </ul>
               </ul>
             </li>
+
           </ul>
         </li>
 
