@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { environment } from '../../environments/environment.development';
 import { ITraits } from '../models/i-traits';
 import { Observable } from 'rxjs';
+import { ITrDetail } from '../models/i-trdetail';
 
 @Injectable({
   providedIn: 'root'
@@ -15,5 +16,9 @@ export class TraitsService {
 
   getTraits(): Observable<ITraits> {
     return this.http.get<ITraits>(`${this.traitsUrl}`)
+  }
+
+  getSpecificTrait(index: string): Observable<ITrDetail> {
+    return this.http.get<ITrDetail>(`${this.traitsUrl}/${index}`)
   }
 }

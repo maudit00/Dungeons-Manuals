@@ -1,8 +1,12 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { TraitsComponent } from './traits.component';
+import { TraisDetailComponent } from '../../shared/components/traits-detail/trais-detail.component';
 
-const routes: Routes = [{ path: '', component: TraitsComponent }];
+const routes: Routes = [
+  { path: '', component: TraitsComponent },
+  {path:':index', component: TraisDetailComponent}
+];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],

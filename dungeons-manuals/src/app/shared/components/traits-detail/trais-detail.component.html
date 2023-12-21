@@ -1,0 +1,9 @@
+<div   class="col-12 col-md-6 col-lg-3 traits-card m-2 p-2 rounded" >
+  <h3 class="purple">{{traitDetails.name}}</h3>
+    <img class="rounded img-traits" [src]="['../../../assets/traits/'+ traitDetails.index +'.jpeg']" load="lazy">
+    <h5 class="mt-2" *ngIf="traitDetails.races.length"><a>Races:{{traitDetails.races[0].name}}</a></h5>
+    <h5 class="mt-2" *ngIf="traitDetails.subraces.length"><a>Subraces:{{traitDetails.subraces[0].name}}</a></h5>
+    <h5 class="mt-2"><a>{{traitDetails.name}}</a></h5>
+    <p class="text-card">{{traitDetails.desc}}</p>
+</div>
+
