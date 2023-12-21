@@ -38,11 +38,11 @@
         <li><span class="purple">Hit points roll: </span>{{monsterDetails.hit_points_roll}}</li>
         <li><span class="purple">Speed: </span>
           <ul>
-            <li *ngIf="monsterDetails.speed.walk.length" class="ms-3"><span class="purple">Walk:
+            <li *ngIf="monsterDetails.speed.walk" class="ms-3"><span class="purple">Walk:
               </span>{{monsterDetails.speed.walk}}</li>
-            <li *ngIf="monsterDetails.speed.swim.length" class="ms-3"><span class="purple">Swim:
+            <li *ngIf="monsterDetails.speed.swim" class="ms-3"><span class="purple">Swim:
               </span>{{monsterDetails.speed.swim}}</li>
-            <li *ngIf="monsterDetails.speed.fly.length" class="ms-3"><span class="purple">Fly:
+            <li *ngIf="monsterDetails.speed.fly" class="ms-3"><span class="purple">Fly:
               </span>{{monsterDetails.speed.fly}}</li>
           </ul>
         </li>
