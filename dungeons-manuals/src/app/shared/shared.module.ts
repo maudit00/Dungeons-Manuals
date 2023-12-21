@@ -14,6 +14,7 @@ import { TrickDamageTableComponent } from './components/trick-damage-table/trick
 import { SpellDamageTableComponent } from './components/spell-damage-table/spell-damage-table.component';
 import { SpellHealTableComponent } from './components/spell-heal-table/spell-heal-table.component';
 import { SpellDetailComponent } from './components/spell-detail-component/spell-detail-component';
+import { FeatureComponent } from './components/feature/feature.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { SpellDetailComponent } from './components/spell-detail-component/spell-
     TrickDamageTableComponent,
     SpellDamageTableComponent,
     SpellHealTableComponent,
-    RaceComponent
+    RaceComponent,
+    FeatureComponent
   ],
   imports: [
     CommonModule,
@@ -43,7 +45,8 @@ import { SpellDetailComponent } from './components/spell-detail-component/spell-
     TrickDamageTableComponent,
     SpellDamageTableComponent,
     SpellHealTableComponent,
-    SpellTableComponent
+    SpellTableComponent,
+    FeatureComponent
   ]
 })
 export class SharedModule { }
