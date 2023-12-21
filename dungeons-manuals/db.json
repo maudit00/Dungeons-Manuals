@@ -1,6 +1,14 @@
 {
-  "users": [],
-  "spells":[
+  "users": [
+    {
+      "email": "davide1193@gmail.com",
+      "password": "$2a$10$JG4fbHyi6o2ZCC8dCaSh3ODxu7Umx.HfUlvdn/MowO7ddzmf/Os3e",
+      "name": "Davide",
+      "surname": "D'Amario",
+      "id": 1
+    }
+  ],
+  "spells": [
     {
       "index": "acid-arrow",
       "name": "Acid Arrow",
@@ -209,7 +217,7 @@
       "index": "burning-hands",
       "name": "Burning Hands",
       "level": 1,
-      "url":"/api/spells/burning-hands"
+      "url": "/api/spells/burning-hands"
     },
     {
       "index": "call-lightning",

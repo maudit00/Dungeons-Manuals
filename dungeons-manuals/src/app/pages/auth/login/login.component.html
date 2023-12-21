@@ -12,6 +12,6 @@
       <label >Password</label>
       <span *ngIf="loginForm.controls['password'].dirty" [ngClass]="{'valid': isValid('password'), 'invalid': isInvalid('password')}">{{msg.password}}</span>
     </div>
-    <button class="btn btn-primary w-100 py-2" type="submit">Sign in</button>
+    <button class="btn btn-primary w-100 py-2" [routerLink]="['/home']"type="submit">Sign in</button>
   </form>
 </div>
