@@ -1,9 +1,11 @@
 <div class="container">
-<p class="h1 text-center mt-5">{{race.name}}</p>
-<div class="row">
-<div class="col-6">
-<img [src]="['../../../assets/img/races/'+race.index+'.jpg']">
-</div>
-<div class="col-6">
-</div>
+	<p class="h1 text-center mt-5">{{race.name}}</p>
+	<div class="row">
+		<img class="col-6" [src]="['../../../assets/img/races/'+race.index+'.jpg']">
+		<div class="col-6">
+			<p class="text-center">Age</p>
+			<p>{{race.age}}</p>
+			<p class="">Speed<span class="ms-4">{{race.speed}}</span></p>
+		</div>
+	</div>
 </div>
