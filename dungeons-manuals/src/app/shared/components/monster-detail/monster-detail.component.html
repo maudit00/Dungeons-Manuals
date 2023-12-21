@@ -6,30 +6,172 @@
     </p>
   </div>
 
-  <div class="d-flex">
+  <div class="d-flex justify-content-center">
 
     <div>
       <img [src]="['../../../../assets/monsters/'+monsterDetails.index+'.png']" class="monster-icon rounded">
     </div>
 
-    <div class="mx-4">
-      <!-- <h4 class="purple">Stats</h4>
-      <ul>
-        <li>Strength <span class="purple">{{monsterDetails.strength}}</span></li>
-        <li>Dexterity <span class="purple">{{monsterDetails.dexterity}}</span></li>
-        <li>Constitution <span class="purple">{{monsterDetails.constitution}}</span></li>
-        <li>Intelligence <span class="purple">{{monsterDetails.intelligence}}</span></li>
-        <li>Wisdom <span class="purple">{{monsterDetails.wisdom}}</span></li>
-        <li>Charisma <span class="purple">{{monsterDetails.charisma}}</span></li>
-      </ul> -->
-
+    <div class="mx-4 text-center">
+      <h4 class="purple">Stats</h4>
       <app-stats-table [character]="monsterDetails"></app-stats-table>
     </div>
 
   </div>
 
+  <div class="d-flex justify-content-center my-3">
+    <div>
+      <h4 class="purple text-center">Info</h4>
+      <ul>
+        <li><span class="purple">Name: </span>{{monsterDetails.name}}</li>
+        <li><span class="purple">Size: </span>{{monsterDetails.size}}</li>
+        <li><span class="purple">Type: </span>{{monsterDetails.type}}</li>
+        <li><span class="purple">Alignment: </span>{{monsterDetails.alignment}}</li>
+        <li><span class="purple">Armor Class: </span>
+          <ul *ngFor=" let p of monsterDetails.armor_class">
+            <li class="ms-3"><span class="purple">Type: </span>{{p.type}}</li>
+            <li class="ms-3"><span class="purple">Value: </span>{{p.value}}</li>
+          </ul>
+        </li>
+        <li><span class="purple">Hit points: </span>{{monsterDetails.hit_points}}</li>
+        <li><span class="purple">Hit dice: </span>{{monsterDetails.hit_dice}}</li>
+        <li><span class="purple">Hit points roll: </span>{{monsterDetails.hit_points_roll}}</li>
+        <li><span class="purple">Speed: </span>
+          <ul>
+            <li *ngIf="monsterDetails.speed.walk" class="ms-3"><span class="purple">Walk:
+              </span>{{monsterDetails.speed.walk}}</li>
+            <li *ngIf="monsterDetails.speed.swim" class="ms-3"><span class="purple">Swim:
+              </span>{{monsterDetails.speed.swim}}</li>
+            <li *ngIf="monsterDetails.speed.fly" class="ms-3"><span class="purple">Fly:
+              </span>{{monsterDetails.speed.fly}}</li>
+          </ul>
+        </li>
+        <li><span class="purple">Proficiencies: </span>
+          <ul *ngFor="let p of monsterDetails.proficiencies">
+            <li class="ms-3"><span class="purple">Value: </span>{{p.value}}</li>
+            <li class="ms-3">{{p.proficiency.name}}</li>
+          </ul>
+        </li>
+        <li *ngIf="monsterDetails.damage_vulnerabilities.length">
+          <span><span class="purple">Damage Vulnerabilities: </span></span>
+          <ul *ngFor="let d of monsterDetails.damage_vulnerabilities">
+            <li>{{d}}</li>
+          </ul>
+        </li>
+        <li *ngIf="!monsterDetails.damage_vulnerabilities.length">
+          <span class="purple">Damage Vulnerabilities: </span>{{monsterDetails.name}} has no damage vulnerabilities.
+        </li>
 
-  <div>
+        <li *ngIf="monsterDetails.damage_resistances.length">
+          <span><span class="purple">Damage resistances: </span></span>
+          <ul *ngFor="let d of monsterDetails.damage_resistances">
+            <li class="ms-3">{{d}}</li>
+          </ul>
+        </li>
+        <li *ngIf="!monsterDetails.damage_resistances.length">
+          <span class="purple">Damage Vulnerabilities: </span>{{monsterDetails.name}} has no Damage resistances.
+        </li>
 
+        <li *ngIf="monsterDetails.damage_immunities.length">
+          <span><span class="purple">Damage immunities: </span></span>
+          <ul *ngFor="let d of monsterDetails.damage_immunities">
+            <li class="ms-3">{{d}}</li>
+          </ul>
+        </li>
+        <li *ngIf="!monsterDetails.damage_immunities.length">
+          <span class="purple">Damage immunities: </span>{{monsterDetails.name}} has no Damage immunities.
+        </li>
+
+        <li *ngIf="monsterDetails.condition_immunities.length">
+          <span><span class="purple">Condition Immunities: </span></span>
+          <ul *ngFor="let d of monsterDetails.condition_immunities">
+            <li class="ms-3">{{d}}</li>
+          </ul>
+        </li>
+        <li *ngIf="!monsterDetails.condition_immunities.length">
+          <span class="purple">Condition immunities: </span>{{monsterDetails.name}} has no Condition immunities.
+        </li>
+
+        <li><span class="purple">Senses:</span>
+          <ul>
+            <li *ngIf="monsterDetails.senses.blindsight" class="ms-3"><span class="purple">Blindsight:
+              </span>{{monsterDetails.senses.blindsight}}</li>
+            <li *ngIf="monsterDetails.senses.darkvision" class="ms-3"><span class="purple">Darkvision:
+              </span>{{monsterDetails.senses.darkvision}}</li>
+            <li *ngIf="monsterDetails.senses.passive_perception" class="ms-3"><span class="purple">Passive Perception:
+              </span>{{monsterDetails.senses.passive_perception}}</li>
+          </ul>
+        </li>
+
+        <li><span class="purple">Languages :</span>{{monsterDetails.languages}}</li>
+        <li><span class="purple">Challenge rating :</span>{{monsterDetails.challenge_rating}}</li>
+        <li><span class="purple">Proficiency bonus :</span>{{monsterDetails.proficiency_bonus}}</li>
+        <li><span class="purple">XP :</span>{{monsterDetails.xp}}</li>
+
+        <li><span class="purple">special abilities :</span>
+          <ul *ngFor="let s of monsterDetails.special_abilities, let i = index">
+            <li class="ms-3"><span class="purple">({{i+1}}) Name: </span>{{s.name}}</li>
+            <li class="ms-3"><span class="purple">({{i+1}}) Desc: </span>{{s.desc}}</li>
+
+            <li *ngIf="s.usage">
+              <span class="purple">Usage: </span>
+              <ul>
+                <li><span class="purple">Type: </span>{{s.usage.type}}</li>
+                <li><span class="purple">Times: </span>{{s.usage.times}}</li>
+                <ul *ngIf="s.usage.rest_types?.length">
+                  <li *ngFor="let r of s.usage.rest_types">{{r}}</li>
+                </ul>
+              </ul>
+            </li>
+
+            <li> <span class="purple">Actions: </span>
+              <ul *ngFor="let a of monsterDetails.actions, let i = index">
+                <li class="ms-3"><span class="purple">({{i+1}}) Name: </span>{{a.name}}</li>
+                <li class="ms-3"><span class="purple">({{i+1}}) Multiattack type: </span>{{a.multiattack_type}}</li>
+                <li class="ms-3"><span class="purple">({{i+1}}) Des: </span>{{a.desc}}</li>
+                <li class="ms-3"><span class="purple">({{i+1}}) Actions: </span>
+                  <ul *ngFor="let m of a.actions">
+                    <li><span class="purple">Action name: </span>{{m.action_name}}</li>
+                    <li><span class="purple">Count: </span>{{m.count}}</li>
+                    <li><span class="purple">Type: </span>{{m.type}}</li>
+                  </ul>
+                </li>
+                <li class="ms-3"><span class="purple">({{i+1}}) Attack bonus: </span>{{a.attack_bonus}}</li>
+                <li class="ms-3"><span class="purple">({{i+1}}) Damage: </span>
+                  <ul *ngFor="let d of a.damage">
+                    <li><span class="purple">Damage Type: </span>
+                      <ul>
+                        <li><span class="purple">Name: </span>{{d.damage_type.name}}</li>
+                      </ul>
+                      <span class="purple">Damage dice: </span>{{d.damage_dice}}
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+        <li *ngIf="monsterDetails.legendary_actions.length"><span class="purple">Legendary actions: </span>
+          <ul *ngFor="let l of monsterDetails.legendary_actions, let i = index">
+            <li class="ms-3"><span class="purple">({{i+1}})Name: </span>{{l.name}}</li>
+            <li class="ms-3"><span class="purple">({{i+1}})Desc: </span>{{l.desc}}</li>
+            <li *ngIf="l.dc?.dc_type"><span class="purple">Dc type: </span>
+              <ul class="ms-3">
+                <li><span class="purple">Name: </span>{{l.dc?.dc_type?.name}}</li>
+                <li><span class="purple">Dc value: </span>{{l.dc?.dc_value}}</li>
+                <li><span class="purple">Dc success type: </span>{{l.dc?.success_type}}</li>
+                <li><span class="purple">Damage: </span>
+                  <ul *ngFor="let d of l.damage">
+                    <li class="ms-3"><span class="purple">Name: </span>{{d.damage_type.name}}</li>
+                    <li class="ms-3"><span class="purple">Damage dice: </span>{{d.damage_dice}}</li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+
+      </ul>
+    </div>
   </div>
 </div>

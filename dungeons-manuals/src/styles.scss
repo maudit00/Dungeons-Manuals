@@ -2,10 +2,20 @@
 
 /* Importing Bootstrap SCSS file. */
 @import 'bootstrap/scss/bootstrap';
+@import url('https://fonts.googleapis.com/css2?family=Cabin:wght@400;700&display=swap');
+
+*{
+  font-family: 'Cabin', sans-serif;
+}
 
 :root{
   --primary-purple: #6222FF;
   --background-azure: #f1fcff;
+}
+
+.purple {
+  font-weight: bold;
+  color: var(--primary-purple);
 }
 
 .valid {

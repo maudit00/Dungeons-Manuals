@@ -1,0 +1,16 @@
+<div class="container">
+
+  <div class="row justify-content-center">
+    <div class="col-12 col-md-6 col-lg-4 card text-center p-2 m-2 class-card" *ngFor="let r  of races" [routerLink]="['/races',r.index]">
+      <div>
+	      <img class="img-fluid rounded img-class" loading="lazy" [src]="['../../../assets/img/races/'+r.index+'.jpg']" alt="Races images">
+      </div>
+      <div>
+        <p class="h5 class-name mt-2">{{r.name}}</p>
+        <p class="h5 class-name mt-2">{{r.index}}</p>
+	<p>Ciao</p>
+      </div>
+    </div>
+  </div>
+</div>
+

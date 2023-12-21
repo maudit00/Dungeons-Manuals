@@ -14,10 +14,13 @@ const routes: Routes = [
   { path: 'subclasses', loadChildren: () => import('./pages/sub-classes/sub-classes.module').then(m => m.SubClassesModule) },
   { path: 'spells', loadChildren: () => import('./pages/spells/spells.module').then(m => m.SpellsModule) },
   { path: 'traits', loadChildren: () => import('./pages/traits/traits.module').then(m => m.TraitsModule) },
+  { path: 'races', loadChildren: () => import('./pages/races/races.module').then(m => m.RacesModule) },
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes,{
+    scrollPositionRestoration : 'enabled'
+})],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }

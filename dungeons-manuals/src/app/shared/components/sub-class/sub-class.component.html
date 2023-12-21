@@ -12,17 +12,23 @@
 	<div class="col-6">
 		<p class="fw-bold h5 mb-5">Spells Available</p>
 	<div class="col-12" *ngFor="let s of subClassDetails.spells">
-		<p class="text-info">{{s.spell.name}}</p>
+		<a [routerLink]="['/spells',s.spell.index]">
+			<p class="text-info">{{s.spell.name}}</p>
+		</a>
 	</div>
   </div>
-      <div class="col-6">
-        <p class="fw-bold mb-5">Skills Levels Unlock</p>
-        <!-- CICLA LEVELS OVVER LE SKILL CHE SBLOCCA NEI VARI LIVELLI LA SOTTOCLASSE -->
-        <div *ngFor="let level of levels">
-          <!-- CICLA NOME ABILITÀ E IL LIVELLO IN CUI LA SBLOCCA -->
-          <p *ngFor="let f of level.features">{{f.name}} Lvl: {{level.level}}</p>
-        </div>
-        </div>
+      <div class="col-6 row">
+		<div class="col-12">
+			<p class="fw-bold mb-5">Skills Levels Unlock</p>
+			<!-- CICLA LEVELS OVVER LE SKILL CHE SBLOCCA NEI VARI LIVELLI LA SOTTOCLASSE -->
+			<div *ngFor="let level of levels">
+				<!-- CICLA NOME ABILITÀ E IL LIVELLO IN CUI LA SBLOCCA -->
+				<a [routerLink]="['/features',f.index]" *ngFor="let f of level.features">
+					<p >{{f.name}} Lvl: {{level.level}}</p>
+				</a>
+			</div>
+		</div>
+	</div>
   </div>
 </div>
 

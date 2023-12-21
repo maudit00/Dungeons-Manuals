@@ -1,0 +1,30 @@
+<div class="container" *ngIf="spell">
+  <h2 class="m-0">{{spell.name}} LV.{{spell.level}}</h2>
+  <span class="spell-type">{{spell.duration}}</span>
+  <span class="spell-type" *ngIf="spell.concentration">Concentration</span>
+  <span class="spell-type" *ngIf="spell.ritual">Ritual</span>
+  <div class="row mt-3">
+    <div class="col-12 col-md-6">
+      <p>{{spell.desc[0]}}<br>{{spell.desc[1]}} </p>
+      <p>{{spell.higher_level}}</p>
+    </div>
+    <div id="spell-data" class="offset-1 col-md-5">
+      <app-trick-damage-table
+      *ngIf="spell.damage && spell.damage.damage_at_character_level"
+      [damage]="spell.damage.damage_at_character_level"></app-trick-damage-table>
+
+      <app-spell-damage-table
+      *ngIf="spell.damage && spell.damage.damage_at_slot_level"
+      [damage]="spell.damage.damage_at_slot_level"></app-spell-damage-table>
+
+      <app-spell-heal-table
+      *ngIf="spell.heal_at_slot_level"
+      [heal]="spell.heal_at_slot_level"></app-spell-heal-table>
+    </div>
+
+    <p>Components: {{spell.components}}</p>
+    <p>Range: {{spell.range}}</p>
+    <p>Casting time: {{spell.casting_time}}</p>
+    <p *ngIf="spell.damage && spell.damage.damage_type">Damage type: {{spell.damage.damage_type.name}}</p>
+  </div>
+</div>

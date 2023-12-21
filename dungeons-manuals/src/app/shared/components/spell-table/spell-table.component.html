@@ -1,6 +1,6 @@
 <div *ngFor="let spell of spells let i=index">
-  <div class="d-flex">
-    <div>{{i.toString().padStart(2,"0")}}</div>
-    <div class="ms-3">{{spell.name}}</div>
+  <div class="spell-link row p-2" [routerLink]="['/spells',spell.index]">
+    <div class="col-2">{{(i+1).toString().padStart(2,"0")}}</div>
+    <div class="offset-2 col-7">{{spell.name}}</div>
   </div>
 </div>

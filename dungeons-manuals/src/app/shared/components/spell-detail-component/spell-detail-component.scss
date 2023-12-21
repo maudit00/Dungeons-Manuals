@@ -1,0 +1,11 @@
+span.spell-type{
+  font-size:0.8em
+}
+span.spell-type:not(:first-of-type)::before{
+  content:", ";
+}
+#spell-data{
+  p{
+    margin:0
+  }
+}
