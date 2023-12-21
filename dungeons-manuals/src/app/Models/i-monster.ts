@@ -108,6 +108,7 @@ interface LegendaryAction {
   desc: string
   attack_bonus?: number
   damage?: Damage2[]
+  dc?:Dc
 }
 
 interface Damage2 {
