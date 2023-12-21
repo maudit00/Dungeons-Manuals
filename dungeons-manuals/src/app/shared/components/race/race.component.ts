@@ -8,7 +8,40 @@ import { ActivatedRoute } from '@angular/router';
   styleUrl: './race.component.scss'
 })
 export class RaceComponent {
-	race!:IRace ;
+	race:IRace = {
+    index: '',
+    name: '',
+    speed: 0,
+    ability_bonuses: [],
+    alignment: '',
+    age: '',
+    size: '',
+    size_description: '',
+    starting_proficiencies: [],
+    starting_proficiency_options: {
+      choose: 0,
+      desc: '',
+      type: '',
+      from: {
+        option_set_type: '',
+        options: [
+          {
+            item :{
+              index: '',
+              name: '',
+              url: ''
+            },
+            option_type: ''
+          }
+        ]
+      }
+    },
+    languages: [],
+    language_desc: '',
+    traits: [],
+    subraces: [],
+    url: ''
+  } ;
 
 	constructor (private racesSvc:RacesService, private active:ActivatedRoute){
 	this.active.params.subscribe(param => {

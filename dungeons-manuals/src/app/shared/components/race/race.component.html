@@ -29,7 +29,7 @@
 				<p class="purple">Traits</p>
 				<p  *ngFor="let i of race.traits">{{i.name}}</p>
 			</div>
-			<div *ngIf="race.starting_proficiency_options.from.options.length">
+			<div *ngIf="race.starting_proficiency_options">
 				<div>
 					<p class="purple ">Starting Proficiencies</p>
 					<p *ngFor="let i of race.starting_proficiencies">{{i.name}}</p>
