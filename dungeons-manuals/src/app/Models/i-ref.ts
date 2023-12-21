@@ -8,3 +8,6 @@ export interface IRes {
   count:number
   results:IRef[]
 }
+export interface ISpellRes extends IRef{
+  level:number
+}

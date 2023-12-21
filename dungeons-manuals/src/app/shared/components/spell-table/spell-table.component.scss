@@ -1,0 +1,7 @@
+.spell-link{
+  &:hover{
+    cursor: pointer;
+    color:white;
+    background:var(--primary-purple)
+  }
+}

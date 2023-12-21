@@ -8,6 +8,11 @@ import { RouterModule } from '@angular/router';
 import { SubClassComponent} from './components/sub-class/sub-class.component';
 import { MonsterDetailComponent } from './components/monster-detail/monster-detail.component';
 import { RaceComponent } from './components/race/race.component';
+import { SpellTableComponent } from './components/spell-table/spell-table.component';
+import { SpellDetailComponent } from './components/spell-detail-component/spell-detail-component'
+import { TrickDamageTableComponent } from './components/trick-damage-table/trick-damage-table.component';
+import { SpellDamageTableComponent } from './components/spell-damage-table/spell-damage-table.component';
+import { SpellHealTableComponent } from './components/spell-heal-table/spell-heal-table.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +20,11 @@ import { RaceComponent } from './components/race/race.component';
     ClassDetailComponent,
     SubClassComponent,
     MonsterDetailComponent,
-    RaceComponent,
+    SpellTableComponent,
+    SpellDetailComponent,
+    TrickDamageTableComponent,
+    SpellDamageTableComponent,
+    SpellHealTableComponent
   ],
   imports: [
     CommonModule,
@@ -27,6 +36,7 @@ import { RaceComponent } from './components/race/race.component';
     StatsTableComponent,
     NgbAccordionModule,
     RouterModule,
+    SpellTableComponent
   ]
 })
 export class SharedModule { }
