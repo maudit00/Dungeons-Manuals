@@ -16,6 +16,7 @@ const routes: Routes = [
   { path: 'traits', loadChildren: () => import('./pages/traits/traits.module').then(m => m.TraitsModule) },
   { path: 'races', loadChildren: () => import('./pages/races/races.module').then(m => m.RacesModule) },
   { path: 'features', loadChildren: () => import('./pages/features/features.module').then(m => m.FeaturesModule) },
+  { path: 'rules', loadChildren: () => import('./pages/rules/rules.module').then(m => m.RulesModule) },
 ];
 
 @NgModule({

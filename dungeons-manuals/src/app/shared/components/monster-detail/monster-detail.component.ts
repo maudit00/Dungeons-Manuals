@@ -10,10 +10,11 @@ import { ViewportScroller } from '@angular/common';
 })
 export class MonsterDetailComponent {
   constructor(
-	  private viewportScroller: ViewportScroller,
-	  private monstersSvc: MonsterService,
-	  private active: ActivatedRoute
+    private viewportScroller: ViewportScroller,
+    private monstersSvc: MonsterService,
+    private active: ActivatedRoute
   ) { }
+
 
   monsterChosen: string = ''
   monsterDetails: IMonster = {
@@ -58,17 +59,21 @@ export class MonsterDetailComponent {
   };
 
   ngOnInit() {
-	  this.viewportScroller.scrollToPosition([0,0])
-	  console.log(this.viewportScroller.scrollToPosition([0,0]))
-	    this.active.params.subscribe(params => {
-	      this.monstersSvc.getMonsterByIndex(params['index']).subscribe(monster => {
-		this.monsterDetails = monster
-	      })
-	    })
+    this.viewportScroller.scrollToPosition([0, 0])
+    console.log(this.viewportScroller.scrollToPosition([0, 0]))
+    this.active.params.subscribe(params => {
+      this.monstersSvc.getMonsterByIndex(params['index']).subscribe(monster => {
+        this.monsterDetails = monster
+      })
+    })
   }
 
-  scrollTo(anchor:string):void{
-	  this.viewportScroller.scrollToAnchor(anchor);
+  scrollTo(anchor: string): void {
+    this.viewportScroller.scrollToAnchor(anchor);
   }
-  
+
+  scrollToTop() :void {
+    window.scrollTo(0, 0)
+  }
+
 }
