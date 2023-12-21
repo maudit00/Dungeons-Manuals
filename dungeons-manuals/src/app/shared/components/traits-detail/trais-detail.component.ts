@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { ITrDetail } from '../../../models/i-trdetail';
-import { TraitsService } from '../../../services/traits.service';
+import { ITrDetail } from '../../../Models/i-trdetail';
+import { TraitsService } from '../../../Services/traits.service';
 import { ActivatedRoute } from '@angular/router';
 
 @Component({

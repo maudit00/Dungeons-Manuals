@@ -1,9 +1,9 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { environment } from '../../environments/environment.development';
-import { ITraits } from '../models/i-traits';
+import { ITraits } from '../Models/i-traits';
 import { Observable } from 'rxjs';
-import { ITrDetail } from '../models/i-trdetail';
+import { ITrDetail } from '../Models/i-trdetail';
 
 @Injectable({
   providedIn: 'root'

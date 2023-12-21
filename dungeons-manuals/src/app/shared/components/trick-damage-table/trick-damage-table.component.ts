@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { IDamageAtCharacterLevel } from '../../../models/i-spell';
+import { IDamageAtCharacterLevel } from '../../../Models/i-spell';
 
 
 @Component({

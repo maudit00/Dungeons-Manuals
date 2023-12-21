@@ -37,8 +37,10 @@ import { SpellHealTableComponent } from './components/spell-heal-table/spell-hea
     StatsTableComponent,
     NgbAccordionModule,
     RouterModule,
-    SpellTableComponent,
-    CommonModule
+    CommonModule,
+    TrickDamageTableComponent,
+    SpellDamageTableComponent,
+    SpellHealTableComponent,
   ]
 })
 export class SharedModule { }

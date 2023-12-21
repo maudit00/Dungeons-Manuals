@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { IResult } from '../../models/i-traits';
-import { TraitsService } from '../../services/traits.service';
+import { IResult } from '../../Models/i-traits';
+import { TraitsService } from '../../Services/traits.service';
 
 @Component({
   selector: 'app-traits',
