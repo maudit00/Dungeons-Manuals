@@ -151,19 +151,19 @@
             </li>
           </ul>
         </li>
-        <li> <span class="purple">Legendary actions: </span>
-          <ul *ngFor="let l of monsterDetails.legendary_actions">
-            <li><span class="purple">Name: </span>{{l.name}}</li>
-            <li><span class="purple">Desc: </span>{{l.desc}}</li>
-            <li><span class="purple">Dc type: </span>
+        <li *ngIf="monsterDetails.legendary_actions.length"><span class="purple">Legendary actions: </span>
+          <ul *ngFor="let l of monsterDetails.legendary_actions, let i = index">
+            <li class="ms-3"><span class="purple">({{i+1}})Name: </span>{{l.name}}</li>
+            <li class="ms-3"><span class="purple">({{i+1}})Desc: </span>{{l.desc}}</li>
+            <li *ngIf="l.dc?.dc_type"><span class="purple">Dc type: </span>
               <ul class="ms-3">
                 <li><span class="purple">Name: </span>{{l.dc?.dc_type?.name}}</li>
                 <li><span class="purple">Dc value: </span>{{l.dc?.dc_value}}</li>
                 <li><span class="purple">Dc success type: </span>{{l.dc?.success_type}}</li>
                 <li><span class="purple">Damage: </span>
-                  <ul class="ms-3" *ngFor="let d of l.damage">
-                    <li><span class="purple">Name: </span>{{d.damage_type.name}}</li>
-                    <li><span class="purple">Damage dice: </span>{{d.damage_dice}}</li>
+                  <ul *ngFor="let d of l.damage">
+                    <li class="ms-3"><span class="purple">Name: </span>{{d.damage_type.name}}</li>
+                    <li class="ms-3"><span class="purple">Damage dice: </span>{{d.damage_dice}}</li>
                   </ul>
                 </li>
               </ul>
