@@ -21,13 +21,23 @@
 				<p class="purple">Language Description</p>
 				<p class="">{{race.language_desc}}</p>
 			</div>
-			<div *ngIf="race.subraces.length">
+			<div >
 				<p class="purple">SubRaces</p>
-				<p  *ngFor="let i of race.subraces">{{i.name}}</p>
+				<div *ngIf="race.subraces.length">
+					<p  *ngFor="let i of race.subraces">{{i.name}}</p>
+				</div>
+				<div *ngIf="!race.subraces.length">
+					<p>There are no subraces for {{race.name}}</p>
+				</div>
 			</div>
-			<div *ngIf="race.traits.length">
+			<div >
 				<p class="purple">Traits</p>
-				<p  *ngFor="let i of race.traits">{{i.name}}</p>
+				<div *ngIf="race.traits.length">
+					<p  *ngFor="let i of race.traits">{{i.name}}</p>
+				</div>
+				<div *ngIf="!race.traits.length">
+					<p>There are no traits for {{race.name}}</p>
+				</div>
 			</div>
 			<div *ngIf="race.starting_proficiency_options">
 				<div>
@@ -40,6 +50,10 @@
 				<p>{{race.starting_proficiency_options.desc}}</p>
 				<p *ngFor="let i of race.starting_proficiency_options.from.options">{{i.item.name}}</p>
 				</div>
+			</div>
+			<div *ngIf="!race.starting_proficiency_options">
+				<p class="purple ">Starting Proficiencies</p>
+				<p>{{race.name}} has no starting proficiency</p>
 			</div>
 		</div>
 	</div>
