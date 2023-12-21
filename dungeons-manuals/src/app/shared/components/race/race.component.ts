@@ -14,7 +14,8 @@ export class RaceComponent {
 	this.active.params.subscribe(param => {
 		this.racesSvc.getSpecificRace(param['index']).subscribe(race =>{
 			this.race = race
-			console.log ( this.race )
+			console.log ( this.race)
+
 		})
 	})
 

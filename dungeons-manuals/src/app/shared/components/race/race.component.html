@@ -1,7 +1,7 @@
 <div class="container">
 	<p class="h1 text-center mt-5">{{race.name}}</p>
 	<div class="row">
-		<img class="col-6" [src]="['../../../assets/img/races/'+race.index+'.jpg']">
+		<img class="col-6 race-icon rounded me-3" [src]="['../../../assets/img/races/'+race.index+'.jpg']">
 		<div class="col-6">
 			<p class="purple">Age</p>
 			<p>{{race.age}}</p>
@@ -21,23 +21,26 @@
 				<p class="purple">Language Description</p>
 				<p class="">{{race.language_desc}}</p>
 			</div>
-			<div>
+			<div *ngIf="race.subraces.length">
 				<p class="purple">SubRaces</p>
 				<p  *ngFor="let i of race.subraces">{{i.name}}</p>
 			</div>
-			<div>
+			<div *ngIf="race.traits.length">
 				<p class="purple">Traits</p>
 				<p  *ngFor="let i of race.traits">{{i.name}}</p>
 			</div>
-			<div>
-				<p class="purple ">Starting Proficiencies</p>
-				<p *ngFor="let i of race.starting_proficiencies">{{i.name}}</p>
-			</div>
-			<div>
-				
+			<div *ngIf="race.starting_proficiency_options.from.options.length">
+				<div>
+					<p class="purple ">Starting Proficiencies</p>
+					<p *ngFor="let i of race.starting_proficiencies">{{i.name}}</p>
+				</div>
+				<div>
+
 				<p class="purple ">Starting Proficiencies Options</p>
-				<p>{{race.starting_proficiency_options.desc | json }}</p>
-				<p *ngFor="let i of race.starting_proficiency_options.from.options">{{i.name}}</p>
+				<p>{{race.starting_proficiency_options.desc}}</p>
+				<p *ngFor="let i of race.starting_proficiency_options.from.options">{{i.item.name}}</p>
+				</div>
+			</div>
 		</div>
 	</div>
 </div>

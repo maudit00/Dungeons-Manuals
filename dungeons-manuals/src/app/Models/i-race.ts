@@ -20,9 +20,19 @@ export interface IRace  {
   starting_proficiency_options: {
 	  choose: number;
 	  desc: string;
+    type: string;
 	  from : {
 		  option_set_type:string;
-		  options:IRef[];
+		  options:[
+        {
+          item:{
+            index:string,
+            name:string,
+            url:string,
+          },
+          option_type:string
+        }
+		  ]
 	  }
   }
   languages: IRef[]
