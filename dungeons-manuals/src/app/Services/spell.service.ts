@@ -11,7 +11,8 @@ import { ISpell } from '../Models/i-spell';
 
 export class SpellService {
 
-  URL:string=`${environment.backendUrl}/spells`
+  URL:string=`${environment.backendUrl}/spells`;
+  spellURL:string=`${environment.api_url}/api/spells`
 
   constructor(
     private http: HttpClient,
@@ -22,6 +23,6 @@ export class SpellService {
   }
 
   getSpell(spellIndex:string):Observable<ISpell>{
-    return this.http.get<ISpell>(`${this.URL}/${spellIndex}`);
+    return this.http.get<ISpell>(`${this.spellURL}/${spellIndex}`);
   }
 }
