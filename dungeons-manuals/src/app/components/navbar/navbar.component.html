@@ -1,16 +1,21 @@
-<div id="mainNavigation">
-  <nav role="navigation">
+<div id="mainNavigation"> <nav role="navigation">
     <div class="py-3 text-center border-bottom">
       <img src="../../../assets/imgs/dungeons-manuals-logo.png" alt="dm-logo" class="invert dm-logo">
     </div>
   </nav>
   <div class="navbar-expand-md">
     <div class="navbar-dark text-center my-2">
-      <button class="navbar-toggler w-75" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+<button
+		type="button"
+		class="btn" 
+		(click)="isCollapsed = !isCollapsed"
+		[attr.aria-expanded]="!isCollapsed"
+		aria-controls="collapseExample"
+	>
         <span class="navbar-toggler-icon"></span> <span class="align-middle">Menu</span>
-      </button>
+	</button>
     </div>
-    <div class="text-center mt-3 collapse navbar-collapse" id="navbarNavDropdown">
+    <div class="text-center mt-3" #collapse="ngbCollapse" [(ngbCollapse)]="isCollapsed">
       <ul class="navbar-nav mx-auto flex-wrap gap-3">
         <li class="nav-item">
           <a class="nav-link" aria-current="page" [routerLink]="['/home']">Home</a>

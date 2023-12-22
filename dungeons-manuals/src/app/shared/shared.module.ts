@@ -15,6 +15,8 @@ import { SpellDamageTableComponent } from './components/spell-damage-table/spell
 import { SpellHealTableComponent } from './components/spell-heal-table/spell-heal-table.component';
 import { SpellDetailComponent } from './components/spell-detail-component/spell-detail-component';
 import { FeatureComponent } from './components/feature/feature.component';
+import { NgbCollapseModule } from '@ng-bootstrap/ng-bootstrap';
+
 
 @NgModule({
   declarations: [
@@ -34,7 +36,8 @@ import { FeatureComponent } from './components/feature/feature.component';
   imports: [
     CommonModule,
     NgbAccordionModule,
-    RouterModule
+    RouterModule,
+    NgbCollapseModule
   ],
   exports: [
     HttpClientModule,
@@ -46,7 +49,8 @@ import { FeatureComponent } from './components/feature/feature.component';
     SpellDamageTableComponent,
     SpellHealTableComponent,
     SpellTableComponent,
-    FeatureComponent
+    FeatureComponent,
+    NgbCollapseModule
   ]
 })
 export class SharedModule { }
